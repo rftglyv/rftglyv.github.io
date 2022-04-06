@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* Animations Keyframes */
-
     @-webkit-keyframes fade-in-right {
         0% {
         -webkit-transform: translateX(50px);
@@ -88,11 +87,9 @@
             background-position: 0% 50%;
         }
     }
-  
 /* Animations Keyframes */
 
 /* Animations Classes */
-
     .fade-in-right {
         -webkit-animation: fade-in-right 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
                 animation: fade-in-right 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -107,7 +104,6 @@
         -webkit-animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
                 animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     }
-
 /* Animations Classes */
 *
 {

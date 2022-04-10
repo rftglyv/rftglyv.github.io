@@ -237,8 +237,8 @@ nav ul li a:hover:after
     nav ul
     {
         display: inline-flex;
-        width: 60%;
-        justify-content: space-evenly;
+        width: 50%;
+        justify-content: space-between;
     }
 
     nav ul li

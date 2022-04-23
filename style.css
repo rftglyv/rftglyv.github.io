@@ -116,7 +116,7 @@ a
 body
 {
     background: linear-gradient(-45deg, #ffbca8, #c9c3e7, #aec9d3, #a7d3c9);
-    background-size: 400% 400%;
+    background-size: 500% 500%;
     animation: gradient 15s ease infinite;
     display: flex;
     flex-direction: column;

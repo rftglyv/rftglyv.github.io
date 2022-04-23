@@ -93,11 +93,12 @@ a
 {
     text-decoration: none;
 }
-body
-{
+body{
     background: linear-gradient(-45deg, #ffbca8, #c9c3e7, #aec9d3, #a7d3c9);
     background-size: 500% 500%;
     animation: gradient 15s ease infinite;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 nav
@@ -151,7 +152,7 @@ nav ul li a:hover:after
 {
     background: rgba(170, 170, 180, 0.55);
     padding: 2rem;
-    border-radius: 5%;
+    border-radius: 30px;
 }
 .post-image>img
 {
@@ -229,4 +230,126 @@ nav ul li a:hover:after
 {
     color: #fff;
     background-color: #75A3CC;
+}
+
+
+
+/* Responsibility */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    nav
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 10px;
+    }
+
+    nav ul
+    {
+        display: inline-flex;
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    nav ul li
+    {
+        list-style: none;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    nav ul li a
+    {
+        color: #1d1d24;
+        position: relative;
+        padding: 5px 0;
+        font-size: 0.65rem;
+    }
+    .logo
+    {
+        max-height: 100px;
+        width: 45px;
+    }
+
+    .container
+    {
+        width: 100% !important;
+    }
+
+    .container-wrapper 
+    {
+        padding: 1rem;
+        width: calc((100%/12)*10) !important;
+    }
+
+    .post-meta-wrapper 
+    {
+        padding: 0.5rem 0;
+    }
+
+    .post-details>h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .post-details>p 
+    {
+        margin-bottom: 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    .post-link 
+    {
+        margin-top: 1rem;
+    }
+
+    .post-link>a 
+    {
+        padding: 10px;
+        font-size: 0.75rem;
+    }
+
+    .post-usedstack
+    {
+        margin-top: 0.5rem;
+    }
+
+    .post-usedstack p 
+    {
+        padding-right: 0.5rem;
+        font-size: 0.55rem;
+    }
+
+    .post-usedstack ul li 
+    {
+        padding: 0 0.25rem;
+        font-size: 0.55rem;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+
+    nav {
+        padding: 30px 25px;
+    }
+    .container
+    {
+        width: 100% !important;
+    }
+}
+/* Medium devices */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+
+    .container-wrapper
+    {
+        width: calc((100%/12)*10) !important;
+    }
+
+    .container
+    {
+        width: 100% !important;
+    }
 }

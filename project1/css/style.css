@@ -26,41 +26,6 @@ nav ul li
 nav ul li:nth-child(1)
 {
     padding-left: 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    height: 50px;
-    border-radius: 25px;
-    text-transform: capitalize;
-    padding: 15px;
-    text-align: center;
-    width: 125px;
-}
-nav ul li:nth-child(1)>a
-{
-    color: rgb(45, 45, 45);
-}
-nav ul li:nth-child(1)>a:hover
-{
-    color: black;
-    transition: 0.3s;
-}
-nav ul li:nth-child(1)>a::after
-{
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: black;
-    transition: 0.3s;
-    bottom: 0;
-}
-nav ul li:nth-child(1)>a:hover::after
-{
-    width: 100%;
-}
-nav ul li:nth-child(1)>a>i
-{
-    padding-right: 0.25rem;
 }
 nav ul li:nth-child(6)
 {
@@ -303,4 +268,199 @@ nav ul li a:hover::after
 .post-link>a:hover::after
 {
     width: 100%;
+}
+/* Testimonials */
+.testimonials
+{
+    background: rgb(70,72,170);
+    background: linear-gradient(90deg, rgba(70,72,170,1) 0%, rgba(174,135,151,1) 100%);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    padding: 5rem 0;
+}
+.slider-details
+{
+    padding: 0 175px;
+}
+.slider-carousel-title
+{
+    text-transform: uppercase;
+    font-family: Roboto Mono,monospace;
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+.slider-carousel-caption
+{
+    font-size: 16px;
+    line-height: 24px;
+    font-style: italic;
+    opacity: .7;
+    margin-bottom: 20px;
+}
+.slider-carousel-description
+{
+    margin-bottom: 60px;
+    text-align: justify;
+    font-family: 'Roboto Serif', serif;
+}
+.slider-details>hr {
+    border-top: 1px solid #a98a79;
+    margin-bottom: 20px;
+}
+/* Blogs */
+.post-cont-info-img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.posts-container
+{
+    width: 30%;
+    height: 150%;
+}
+.blog-post-details
+{
+    padding: 20px 40px 40px 20px;
+}
+.blog-post-date
+{
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+}
+.blog-post-title
+{
+    font-family: Roboto Mono,monospace;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #555;
+}
+.blog-post-desc
+{
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    margin-bottom: 0;
+}
+/* Contact */
+.contact
+{
+    background: rgb(70,72,170);
+    background: linear-gradient(90deg, rgba(70,72,170,1) 0%, rgba(174,135,151,1) 100%);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+}
+.contact-container-wrapper
+{
+    padding: 60px 0;
+}
+.contact-section-title
+{
+    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 42px;
+    font-family: Roboto Mono,monospace;
+}
+.contacat-info-list
+{
+    margin-bottom: 45px;
+}
+.contacat-info-list dl dt
+{
+    float: left;
+    text-transform: uppercase;
+}
+.contacat-info-list dl dd
+{
+    margin-bottom: 1rem;
+    padding-left: 100px;
+}
+.contacat-info-list dl dd a
+{
+    color: white;
+}
+.contact-sm-links>ul
+{
+    list-style: none;
+    padding: 0;
+}
+.contact-sm-links>ul>li
+{
+    margin-bottom: 20px;
+}
+.contact-sm-links>ul>li>a
+{
+    font-size: 16px;
+    line-height: 24px;
+}
+.contact-form-title
+{
+    margin-bottom: 1rem;
+}
+.form-field
+{
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Roboto Mono,monospace;
+}
+form textarea
+{
+    height: 120px;
+}
+.contact-form-btn
+{
+    background-color: #6d56c1;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding: 15px;
+    min-width: 170px;
+    text-align: center;
+    display: inline-block;
+    color: #fff!important;
+    font-weight: 600;
+    overflow: hidden;
+    width: 100%;
+    border: none!important;
+    box-shadow: 0 1px 29px rgb(0 0 0 / 16%);
+    position: relative;
+}
+.contact-form-btn:hover
+{
+    background-color: #8469e6;
+}
+.footer
+{
+    color: #fff;
+    opacity: .4;
+    width: 100%;
+    text-align: center;
+    top: 60px;
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Roboto Mono,monospace;
 }

@@ -1,5 +1,43 @@
 /* Utilities */
-
+nav ul li:nth-child(1)
+{
+    padding-left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 50px;
+    border-radius: 25px;
+    text-transform: capitalize;
+    padding: 15px;
+    text-align: center;
+    width: 125px;
+}
+nav ul li:nth-child(1)>a
+{
+    color: rgb(45, 45, 45);
+}
+nav ul li:nth-child(1)>a:hover
+{
+    color: black;
+    transition: 0.3s;
+}
+nav ul li:nth-child(1)>a::after
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: black;
+    transition: 0.3s;
+    bottom: 0;
+}
+nav ul li:nth-child(1)>a:hover::after
+{
+    width: 100%;
+}
+nav ul li:nth-child(1)>a>i
+{
+    padding-right: 0.25rem;
+}
 /* Outlines */
 .ol-black
 {
@@ -147,16 +185,14 @@
 }
 
 .col-6 {
-    width: calc((100%/12)*6)
-}
+    width: calc((100%/12)*6);}
 
 .col-7 {
     width: calc((100%/12)*7)
 }
 
 .col-8 {
-    width: calc((100%/12)*8)
-}
+    width: calc((100%/12)*8);}
 
 .col-9 {
     width: calc((100%/12)*9)

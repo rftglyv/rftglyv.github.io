@@ -1,0 +1,50 @@
+:root
+{
+    font-family: 'Roboto Mono', monospace;
+}
+html 
+{
+    scroll-behavior: smooth;
+}
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+}
+*::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+a
+{
+    text-decoration: none;
+    color: white;
+}
+.hello-details,.resume-details,.portfolio-details,.blog-details,.contact-details
+{
+    color: #555555;
+    margin: auto;
+}
+.hello-details>h3,.resume-details>h3,.portfolio-details>h3,.blog-details>h3
+{
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+.hello-details>p,.resume-details>p,.portfolio-details>p,.blog-details>p
+{
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+::placeholder 
+{ 
+    color: white;
+    opacity: 0.8;
+}
+.fa,.fa-brands
+{
+    padding-right: 0.8rem;
+}

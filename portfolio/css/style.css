@@ -516,6 +516,9 @@ form textarea
         font-size: 0.75rem;
         padding: 0.65rem;
     }
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 0.7rem;
+    }
     /* Profile */
     .profile-wrapper
     {
@@ -565,6 +568,7 @@ form textarea
     .post-image
     {
         width: 100%;
+        margin-bottom: 0.8rem;
     }
     .post-meta
     {
@@ -609,6 +613,15 @@ form textarea
     .contact-info
     {
         flex-direction: column;
+    }
+    .contact-sm-links
+    {
+        width: 100%;
+    }
+    .contact-sm-links>ul
+    {
+        display: flex;
+        justify-content: space-between;
     }
     .contact-sm-links>ul>li {
         display: inline-block;
@@ -673,6 +686,7 @@ form textarea
     .post-image
     {
         width: 100%;
+        margin-bottom: 1.5rem;
     }
     .post-meta
     {

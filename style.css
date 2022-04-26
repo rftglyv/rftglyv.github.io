@@ -269,6 +269,10 @@ nav ul li a:hover:after
         width: 70%;
         font-size: 2vw;
     }
+    .navbar-nav {
+        justify-content: space-evenly !important;
+        width: 100% !important;
+    }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {

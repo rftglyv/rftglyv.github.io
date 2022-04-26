@@ -599,6 +599,7 @@ form textarea
     .blog-posts-container
     {
         width: auto;
+        margin-bottom: 2rem;
     }
     /* Contact */
     .contact-form

@@ -183,7 +183,7 @@ nav ul li a:hover:after
 {
     width: 100%;
 }
-.logo
+.logo>img
 {
     max-height: 100px;
 }
@@ -193,6 +193,7 @@ nav ul li a:hover:after
     pointer-events: none;
     width: 40%;
     flex-direction: column;
+    margin-bottom: 5rem;
 }
 .content h1
 {
@@ -255,10 +256,9 @@ nav ul li a:hover:after
         padding: 5px 0;
         font-size: 0.55rem;
     }
-    .logo
+    .logo>img
     {
-        max-height: 100px;
-        width: 45px;
+        max-height: 50px;
     }
     .content h1
     {

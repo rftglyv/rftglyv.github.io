@@ -8,5 +8,5 @@ jQuery(function($){
         if(counter >= ilys.length){
             counter = 0;
         }
-    }, 1500)
+    }, 2250)
 })

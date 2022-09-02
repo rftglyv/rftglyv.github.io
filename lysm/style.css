@@ -1,40 +1,51 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body{
-    font-family: 'Poppins', sans-serif;
-    height: 100vh;
-    width: 100%;
-    background: rgb(175, 90, 90);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .date-container{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .date-container h2{
-    background-color: #ddd;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    border: 5px solid #fff;
-    -webkit-box-shadow: 8px 0px 0px 0px #DCD0C0, 0px 8px 0px 0px #B1938B, -8px 0px 0px 0px #4E4E56, 0px 0px 0px 8px #DA635D, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 8px 0px 0px 0px #DCD0C0, 0px 8px 0px 0px #B1938B, -8px 0px 0px 0px #4E4E56, 0px 0px 0px 8px #DA635D, 5px 5px 15px 5px rgba(0,0,0,0);
-  }
-  
-  .date-container p{
-    background-color: #ddd;
-    padding: 2px;
-    border-radius: 10px;
-    border: 2px solid #fff;
-    -webkit-box-shadow: 8px 0px 0px 0px #DCD0C0, 0px 8px 0px 0px #B1938B, -8px 0px 0px 0px #4E4E56, 0px 0px 0px 8px #DA635D, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 8px 0px 0px 0px #DCD0C0, 0px 8px 0px 0px #B1938B, -8px 0px 0px 0px #4E4E56, 0px 0px 0px 8px #DA635D, 5px 5px 15px 5px rgba(0,0,0,0);
-  }
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	height: 100vh;
+	width: 100%;
+	background: rgb(175, 90, 90);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.date-container {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+
+#ily {
+  padding: 0px 0px 10px 0px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+.date-container h2,
+.ily-cont {
+	background-color: #ddd;
+	color: black;
+	padding: 20px;
+	border-radius: 10px;
+	border: 5px solid #fff;
+}
+
+.ily-cont {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.date-container p {
+	background-color: #ddd;
+	padding: 2px;
+	border-radius: 10px;
+	border: 2px solid #fff;
+}

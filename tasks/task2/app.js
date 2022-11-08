@@ -14,30 +14,31 @@ function RevCap(){
     }
     document.getElementById("result-text").innerHTML = "Result : " + letterReCap(str)
 }
-document.getElementById("result-btn").onclick = function() {RevCap()};
+document.getElementById("result-btn").onclick = function() {RevCap()}
 
 function DupRem(){
-    arr = document.getElementById("text-input1").value.split(/,/)
-    function remDupl(arr){
-        return arr.filter((item,index) => arr.indexOf(item) === index).toString()
-    }
-    document.getElementById("result-text1").innerHTML = "Result : " + remDupl(arr)
-}
-document.getElementById("result-btn1").onclick = function() {DupRem()};
-
-let rowContainer = document.querySelector(".board-row")
-let rowContainerWidth = rowContainer.clientWidth
-
-for (let i=1; i<=8; i++) {
-  let box = document.createElement("div");
-  box.innerHTML = i
-  box.setAttribute("class", "box d-flex justify-content-center align-items-center");
-  rowContainer.appendChild(box);
-  if(i%2==0){
-    box.classList.add("bg-dark");
-    box.setAttribute('style', `width: ${rowContainerWidth/8}px; height: ${rowContainerWidth/8}px; color: white;`)
+  if(document.getElementById("CaseSensCheck").checked == true){
+    arr = document.getElementById("text-input1").value.toLowerCase().split(/[,]/)
   }else{
-    box.classList.add("bg-light");
-    box.setAttribute('style', `width: ${rowContainerWidth/8}px; height: ${rowContainerWidth/8}px; color: black;`)
+    arr = document.getElementById("text-input1").value.split(/[,]/)
+  }
+  function remDupl(arr){
+    return arr.filter((item,index) => arr.indexOf(item) === index).toString()
+  }
+  document.getElementById("result-text1").innerHTML = "Result : " + remDupl(arr)
+}
+document.getElementById("result-btn1").onclick = function() {DupRem()}
+
+container = document.querySelector(".chessBoardContainer")
+containerWidth = container.clientWidth
+chessboard = document.getElementById('chessboard');
+for (i = 0; i < 8; i++) {
+  for (j = 0; j < 8; j++) {
+    chessSquare = document.createElement('div');
+    chessSquare.setAttribute('style', `float: left; width: ${containerWidth/8}px; height: ${containerWidth/8}px; border: 1px solid black; background-color: #fff;`)
+    if ((i + j) % 2 == 0) {
+      chessSquare.style.backgroundColor = '#000';
+    }
+    chessboard.appendChild(chessSquare);
   }
 }

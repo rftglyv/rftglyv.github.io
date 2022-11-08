@@ -11,7 +11,7 @@
       <div class="funcResultCards row justify-content-around">
         <div class="card col-5 p-0">
           <div class="card-header">
-            Reverse Capitalizator
+            Reverse Capitalisator
           </div>
           <div class="card-body d-flex flex-column justify-content-around">
             <h5 class="card-title">Input content</h5>
@@ -27,22 +27,19 @@
           <div class="card-body d-flex flex-column justify-content-around">
             <h5 class="card-title">Input content</h5>
             <p class="card-text">Split with ","</p>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" value="" id="CaseSensCheck">
+              <label class="form-check-label" for="CaseSensCheck">
+                Case sensetive
+              </label>
+            </div>
             <input id="text-input1" type="text" class="form-control" placeholder="Input" value="23,12,34,12,30,12,34,89,1,3,0,123,453">
             <p id="result-text1" class="card-text mt-3">Result :</p>
             <button id="result-btn1" class="btn btn-primary">Result</button>
           </div>
         </div>
       </div>
-      <div class="container p-0 mt-5 align-items-center justify-content-center" style="outline:solid black;">
-        <div class="row">
-          <div class="col-12">
-            <div class="board-row d-flex">
-            </div>
-            <div class="board-row d-flex">
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="chessBoardContainer container d-flex p-0 mt-5 align-items-center justify-content-center"><div id="chessboard"></div></div>
     </div>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

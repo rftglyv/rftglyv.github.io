@@ -18,7 +18,8 @@ function RevCap(){
 document.getElementById("result-btn").onclick = function() {RevCap()};
 
 function DupRem(){
-    arr = document.getElementById("text-input1").value.toLowerCase().split(/,/)
+    input = document.getElementById("text-input1").value.toLowerCase()
+    arr = input.split(/,/)
     function remDupl(arr){
         return arr.filter((item,index) => arr.indexOf(item) === index).toString()
     }

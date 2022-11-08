@@ -2,7 +2,8 @@ function RevCap(){
     str = document.getElementById("text-input").value
     function letterReCap(str){
         let strArr = str.split("")
-        let result = []
+        let result = []item.toUpperCase()):result.push(item.toLowerCase()))
+        //for (i of strArr){
         strArr.forEach((item) => item.match(/[a-z]|[0-9]/) ? result.push(item.toUpperCase()):result.push(item.toLowerCase()))
         //for (i of strArr){
         //    if(i.match(/[a-z]/)){
@@ -17,7 +18,7 @@ function RevCap(){
 document.getElementById("result-btn").onclick = function() {RevCap()};
 
 function DupRem(){
-    arr = document.getElementById("text-input1").value.split(/,/)
+    arr = document.getElementById("text-input1").value.toLowerCase().split(/,/)
     function remDupl(arr){
         return arr.filter((item,index) => arr.indexOf(item) === index).toString()
     }

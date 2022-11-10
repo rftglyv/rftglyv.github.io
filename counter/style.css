@@ -29,12 +29,7 @@ body {
 	flex-direction: column;
 }
 
-.list-group{
-	min-width: 500px;
-}
-
 .date-container {
-	min-width: 450px;
 	background-color: #ddd;
 	border-radius: 10px;
 	border: 5px solid #fff;
@@ -43,12 +38,14 @@ body {
 	align-items: center;
 }
 
-.date-container h2{
+.date-container h2, p{
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 700;
+	margin: 0;
 }
 
 .date-container p {
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 700;
+	margin: 0;
 }

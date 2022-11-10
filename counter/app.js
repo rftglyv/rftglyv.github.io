@@ -1,3 +1,15 @@
+jQuery(function($){
+  var strings = ['Nigar', 'dərs', 'oxu', '!'];
+  var counter = 0;
+  var $str = $('#study')
+  setInterval(function(){
+    $str.text(strings[counter++]);
+    if(counter >= strings.length){
+      counter = 0;
+    }
+  }, 1000)
+})
+
 const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
@@ -26,10 +38,10 @@ let exams = [
 const listGroup = document.querySelector(".list-group");
 
 for (i in exams){
-  let examTemplate = `<li class="list-group-item d-flex justify-content-center">
-  <div class="d-flex flex-column align-items-center">
+  let examTemplate = `<li class="container-fluid list-group-item d-flex justify-content-center">
+  <div class="container-fluid d-flex flex-column align-items-center">
     <p class="h3">${exams[i].name}</p>
-    <div class="date-container justify-content-around">
+    <div class="date-container container-fluid  justify-content-around">
       <h2 id="month-${i}">00</h2>
       <p>:</p>
       <h2 id="day-${i}">00</h2>

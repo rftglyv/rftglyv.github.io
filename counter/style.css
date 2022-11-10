@@ -29,27 +29,26 @@ body {
 	flex-direction: column;
 }
 
+.list-group{
+	min-width: 500px;
+}
+
 .date-container {
+	min-width: 450px;
+	background-color: #ddd;
+	border-radius: 10px;
+	border: 5px solid #fff;
+	padding: 1rem;
 	display: flex;
 	align-items: center;
-	gap: 30px;
 }
 
 .date-container h2{
-	background-color: #ddd;
-	color: black;
-	padding: 20px;
-	border-radius: 10px;
-	border: 5px solid #fff;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 700;
 }
 
 .date-container p {
-	background-color: #ddd;
-	padding: 2px;
-	border-radius: 10px;
-	border: 2px solid #fff;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 700;
 }

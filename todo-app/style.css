@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+html 
+{
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after 
+{
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+::-webkit-scrollbar
+{
+    width: 0;
+}
+
+body 
+{
+	font-family: 'Quicksand', sans-serif;
+	line-height: 1.4;
+    overflow: hidden;
+}
+
+.container 
+{
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #333;
+	height: 90vh;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+    overflow-y: auto;
+}
+
+.form-card
+{
+    border: 3px solid #333;
+    border-radius: 5px;
+    padding: 1.5rem;
+    opacity: 0.8;
+}
+
+.app-title 
+{
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 80px;
+}
+
+svg 
+{
+	width: 64px;
+	height: 64px;
+}
+
+.task-list 
+{
+	list-style: none;
+	margin-top: 1.5rem;
+}
+
+.task-item 
+{
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.task-item span 
+{
+	flex-grow: 1;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 22px;
+}
+
+.task-item span:nth-child(4)
+{
+    text-align: right;
+    color: rgb(120, 120, 120);
+    font-size: 1rem;
+}
+
+.done span 
+{
+	text-decoration: line-through;
+}
+
+input[type="checkbox"] 
+{
+	display: none;
+}
+
+.tick 
+{
+	width: 30px;
+	height: 30px;
+	border: 3px solid #333;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.tick::before 
+{
+	content: "✓";
+	font-size: 20px;
+	display: none;
+}
+
+.done .tick::before 
+{
+	display: inline;
+}
+
+.delete-task 
+{
+	border: none;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}
+
+.delete-task svg 
+{
+	width: 30px;
+	height: 30px;
+	pointer-events: none;
+}
+
+form 
+{
+    margin-bottom: 1rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+input[type="text"] 
+{
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 2px solid rgb(145, 145, 145);
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type="text"]:focus
+{
+    border: 2px solid #333;
+}

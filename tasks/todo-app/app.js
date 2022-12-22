@@ -76,33 +76,26 @@ function editTask(key) {
 	form.addEventListener("submit", (event) => {
 		event.preventDefault();
 		const input = document.querySelector(".app-edit-task-input");
-		if (input !== "") {
-			taskTextArea.innerHTML = `
-			<input id="${tasks[index].id}" type="checkbox"/>
-			<label for="${tasks[index].id}" class="tick app-tick"></label>
-			<span >${tasks[index].text}</span>
-			<span>${tasks[index].time} | ${tasks[index].date}</span>
-			<button class="edit-task app-edit-task">
-			<svg><use href="#edit-icon"></use></svg>
-			</button>
-			<button class="delete-task app-delete-task">
-			<svg><use href="#delete-icon"></use></svg>
-			</button>`
-		} else {
-			const text = input.value.trim();
-			tasks[index].text = text;
-			taskTextArea.innerHTML = `
-			<input id="${tasks[index].id}" type="checkbox"/>
-			<label for="${tasks[index].id}" class="tick app-tick"></label>
-			<span >${text}</span>
-			<span>${tasks[index].time} | ${tasks[index].date}</span>
-			<button class="edit-task app-edit-task">
-			<svg><use href="#edit-icon"></use></svg>
-			</button>
-			<button class="delete-task app-delete-task">
-			<svg><use href="#delete-icon"></use></svg>
-			</button>`
+		const text = input.value.trim();
+		function isInputEmpty()
+		{
+			return text.length === 0 ? tasks[index].text : text
 		}
+		if (isInputEmpty() === text){
+			tasks[index].text = text;
+		}
+		taskTextArea.innerHTML = `
+		<input id="${tasks[index].id}" type="checkbox"/>
+		<label for="${tasks[index].id}" class="tick app-tick"></label>
+		<span>${isInputEmpty()}</span>
+		<span>${tasks[index].time} | ${tasks[index].date}</span>
+		<button class="edit-task app-edit-task">
+		<svg><use href="#edit-icon"></use></svg>
+		</button>
+		<button class="delete-task app-delete-task">
+		<svg><use href="#delete-icon"></use></svg>
+		</button>`
+
 	});
 }
 

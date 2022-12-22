@@ -61,13 +61,7 @@ function editTask(key) {
 	const index = tasks.findIndex((item) => item.id === Number(key));
 	const taskTextArea = document.querySelector(`[data-key='${tasks[index].id}']`);
 	taskTextArea.innerHTML = `
-    <input id="${tasks[index].id}" type="checkbox"/>
-    <label for="${tasks[index].id}" class="tick app-tick"></label>
     <form class="edit-tasks-form"><input autofocus type="text" placeholder="${tasks[index].text} | Press Enter" class="app-edit-task-input"/></form>
-    <span>${tasks[index].time} | ${tasks[index].date}</span>
-	<button class="edit-task app-edit-task">
-	<svg><use href="#edit-icon"></use></svg>
-	</button>
     <button class="delete-task app-delete-task">
     <svg><use href="#delete-icon"></use></svg>
     </button>`

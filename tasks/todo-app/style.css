@@ -162,9 +162,9 @@ input[type="checkbox"]
 	justify-content: space-between;
 }
 
-.edit-tasks-form input[type="text"]
+.edit-tasks-form input[type="text"]:focus
 {
-	margin-left: 0.75rem;
+	border: 2px solid rgb(0, 80, 255);
 }
 
 input[type="text"] 

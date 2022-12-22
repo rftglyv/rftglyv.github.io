@@ -59,18 +59,37 @@ for (i in exams){
 
 function main(){
   for (i in exams){
-    monthField = document.getElementById(`month-${i}`);
-    dayField = document.getElementById(`day-${i}`);
-    hourField = document.getElementById(`hour-${i}`);
-    minuteField = document.getElementById(`minute-${i}`);
-    secondField = document.getElementById(`second-${i}`);
-    counter(i)
+    if (isFinished(i)){
+      const container = document.querySelectorAll(".date-container");
+      for (j in container) {
+        container[i].innerHTML = `<h2>Exam Over</h2>`
+      }
+    }else{
+      monthField = document.getElementById(`month-${i}`);
+      dayField = document.getElementById(`day-${i}`);
+      hourField = document.getElementById(`hour-${i}`);
+      minuteField = document.getElementById(`minute-${i}`);
+      secondField = document.getElementById(`second-${i}`);
+      counter(i)
+    }
   }
 }
 
-function counter(i){
-  eventDay = new Date();
-  eventDay = new Date(exams[i].examDate);
+function pad(num)
+{
+  return num<10 ? '0'+ num : num
+}
+
+function isFinished(exam)
+{
+  eventDay = new Date(exams[exam].examDate);
+  const today = new Date();
+  const timeSpan = eventDay - today;
+  return timeSpan<0 ? true : false;
+}
+
+function counter(exam){
+  eventDay = new Date(exams[exam].examDate);
   const today = new Date();
   const timeSpan = eventDay - today;
 
@@ -80,11 +99,11 @@ function counter(i){
   const minutes = Math.floor((timeSpan % hour) / minute);
   const seconds = Math.floor((timeSpan % minute) / second);
 
-  monthField.innerHTML = months;
-  dayField.innerHTML = days;
-  hourField.innerHTML = hours;
-  minuteField.innerHTML = minutes;
-  secondField.innerHTML = seconds;
+  monthField.innerHTML = pad(months);
+  dayField.innerHTML = pad(days);;
+  hourField.innerHTML = pad(hours);
+  minuteField.innerHTML = pad(minutes);
+  secondField.innerHTML = pad(seconds);
 }
 
 setInterval(function(){main()}, 1000);

@@ -29,9 +29,9 @@ var eventDay = new Date();
 eventDay = new Date("December 12, 2022 00:00:00");
 
 function pad(num)
-  {
-    return num<10 ? '0'+ num : num
-  }
+{
+  return num<10 ? '0'+ num : num
+}
 
 const countDownFn = () => 
 {

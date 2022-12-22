@@ -28,6 +28,11 @@ const month = day * 30;
 var eventDay = new Date();
 eventDay = new Date("December 12, 2022 00:00:00");
 
+function pad(num)
+  {
+    return num<10 ? '0'+ num : num
+  }
+
 const countDownFn = () => 
 {
   const today = new Date();
@@ -39,11 +44,11 @@ const countDownFn = () =>
   const minutes = Math.floor((timeSpan % hour) / minute);
   const seconds = Math.floor((timeSpan % minute) / second);
 
-  monthField.innerHTML = months;
-  dayField.innerHTML = days;
-  hourField.innerHTML = hours;
-  minuteField.innerHTML = minutes;
-  secondField.innerHTML = seconds;
+  monthField.innerHTML = pad(months);
+  dayField.innerHTML = pad(days);;
+  hourField.innerHTML = pad(hours);
+  minuteField.innerHTML = pad(minutes);
+  secondField.innerHTML = pad(seconds);
 
 }
 

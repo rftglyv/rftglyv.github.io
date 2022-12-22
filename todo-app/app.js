@@ -18,6 +18,9 @@ function main(task) {
     <label for="${task.id}" class="tick app-tick"></label>
     <span>${task.text}</span>
     <span>${task.time} | ${task.date}</span>
+	<button class="edit-task app-edit-task">
+	<svg><use href="#edit-icon"></use></svg>
+	</button>
     <button class="delete-task app-delete-task">
     <svg><use href="#delete-icon"></use></svg>
     </button>
@@ -54,6 +57,40 @@ function toggleDone(key) {
 	main(tasks[index]);
 }
 
+function editTask(key) {
+	const index = tasks.findIndex((item) => item.id === Number(key));
+	const taskTextArea = document.querySelector(`[data-key='${tasks[index].id}']`);
+	taskTextArea.innerHTML = `
+    <input id="${tasks[index].id}" type="checkbox"/>
+    <label for="${tasks[index].id}" class="tick app-tick"></label>
+    <form class="edit-tasks-form"><input type="text" placeholder="${tasks[index].text} | Press Enter" class="app-edit-task-input"/></form>
+    <span>${tasks[index].time} | ${tasks[index].date}</span>
+	<button class="edit-task app-edit-task">
+	<svg><use href="#edit-icon"></use></svg>
+	</button>
+    <button class="delete-task app-delete-task">
+    <svg><use href="#delete-icon"></use></svg>
+    </button>`
+	const form = document.querySelector(".edit-tasks-form");
+	form.addEventListener("submit", (event) => {
+		event.preventDefault();
+		const input = document.querySelector(".app-edit-task-input");
+		const text = input.value.trim();
+		tasks[index].text = text;
+		taskTextArea.innerHTML = `
+		<input id="${tasks[index].id}" type="checkbox"/>
+		<label for="${tasks[index].id}" class="tick app-tick"></label>
+		<span >${text}</span>
+		<span>${tasks[index].time} | ${tasks[index].date}</span>
+		<button class="edit-task app-edit-task">
+		<svg><use href="#edit-icon"></use></svg>
+		</button>
+		<button class="delete-task app-delete-task">
+		<svg><use href="#delete-icon"></use></svg>
+		</button>`
+	});
+}
+
 function deleteTask(key) {
 	const index = tasks.findIndex((item) => item.id === Number(key));
 	const Task = {
@@ -87,5 +124,10 @@ list.addEventListener("click", (event) => {
 	if (event.target.classList.contains("app-delete-task")) {
 		const itemKey = event.target.parentElement.dataset.key;
 		deleteTask(itemKey);
+	}
+
+	if (event.target.classList.contains("app-edit-task")) {
+		const itemKey = event.target.parentElement.dataset.key;
+		editTask(itemKey);
 	}
 });

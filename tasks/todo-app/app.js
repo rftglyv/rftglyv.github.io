@@ -63,7 +63,7 @@ function editTask(key) {
 	taskTextArea.innerHTML = `
     <input id="${tasks[index].id}" type="checkbox"/>
     <label for="${tasks[index].id}" class="tick app-tick"></label>
-    <form class="edit-tasks-form"><input type="text" placeholder="${tasks[index].text} | Press Enter" class="app-edit-task-input"/></form>
+    <form class="edit-tasks-form"><input autofocus type="text" placeholder="${tasks[index].text} | Press Enter" class="app-edit-task-input"/></form>
     <span>${tasks[index].time} | ${tasks[index].date}</span>
 	<button class="edit-task app-edit-task">
 	<svg><use href="#edit-icon"></use></svg>
@@ -71,6 +71,7 @@ function editTask(key) {
     <button class="delete-task app-delete-task">
     <svg><use href="#delete-icon"></use></svg>
     </button>`
+	document.querySelector(`.app-edit-task-input`).focus()
 	const form = document.querySelector(".edit-tasks-form");
 	form.addEventListener("submit", (event) => {
 		event.preventDefault();

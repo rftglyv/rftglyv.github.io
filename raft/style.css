@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	cursor: none;
 }
 
 body {
@@ -13,6 +14,26 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	cursor: url(assets/cursor-pointer.png), auto;
+	pointer-events: none;
+}
+
+#cursor
+{
+	height: 64px;
+	width: 64px;
+	transition: 0.2s ease-out;
+	transition: all 200ms ease-out;
+	position: fixed;
+	left: 0;
+	top: 0;
+	transform: translate(calc(-75% + 15px), -75%);
+}
+
+#cursor img
+{
+	width: 64px;
+	filter: drop-shadow(16px 16px 32px rgba(1, 1, 42, 0.2));
 }
 
 .date-container {

@@ -11,6 +11,8 @@ jQuery(function($){
   }, 3000)
 })
 
+import confetti from 'https://cdn.skypack.dev/canvas-confetti'
+
 let monthField = document.getElementById('month');
 let dayField = document.getElementById('day');
 let hourField = document.getElementById('hour');
@@ -50,6 +52,18 @@ const countDownFn = () =>
   minuteField.innerHTML = pad(minutes);
   secondField.innerHTML = pad(seconds);
 
+  if(secondField.innerHTML=="00"){
+    confetti({
+      particleCount: 300,
+      startVelocity: 40,
+      spread: 360,
+      origin: 
+      {
+        x: Math.random() - 0.1,
+        y: Math.random() - 0.3
+      }
+    })
+  }
 }
 
 interval = setInterval(countDownFn, second);
@@ -57,8 +71,6 @@ interval = setInterval(countDownFn, second);
 const cursor = document.getElementById('cursor');
 
 const moveCursor = (e)=> {
-  const mouseY = e.clientY;
-  const mouseX = e.clientX;
   cursor.style.transform = `translate3d(calc(${e.clientX}px - 75%), calc(${e.clientY}px - 75%), 0)`;
 }
 

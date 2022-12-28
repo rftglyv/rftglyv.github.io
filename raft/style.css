@@ -186,12 +186,13 @@ body {
 	}
 
 	.date-container h2,
-	.date-container p {
+	.date-container p, 
+	.heart {
 		rotate: 90deg;
 	}
 }
 @media only screen and (max-width: 992px) {
 	#cursor {
-		display: none;
+		display: none !important;
 	}
 }

@@ -43,28 +43,29 @@ function generateSlides() {
 }
 generateSlides();
 
-function setSlide(value){
-    slides.style.transform = `matrix(1, 0, 0, 1, ${value}, 0)`;
+const setSlide = (value) => {
+    value == "reset" ? slides.style.transform = `matrix(1, 0, 0, 1, 0, 0)` : slides.style.transform = `matrix(1, 0, 0, 1, ${value}, 0)`;
+}
+
+let matrixValueX = ()=> {
+    let matrix = window.getComputedStyle(document.querySelector('.slides')).transform
+    return Number(matrix.match(/matrix.*\((.+)\)/)[1].split(', ')[4])
 }
 
 function slideLeft(e) {
 	e.preventDefault();
-    let matrix = window.getComputedStyle(document.querySelector('.slides')).transform
-    matrixValueX = Number(matrix.match(/matrix.*\((.+)\)/)[1].split(', ')[4])
-    if(!(matrixValueX+slideAmount > 0)){
-        slides.style.transform = `matrix(1, 0, 0, 1, ${matrixValueX+slideAmount}, 0)`;
+    if(!(matrixValueX()+slideAmount > 0)){
+        setSlide(matrixValueX()+slideAmount)
     } else {
-        slides.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
+        setSlide("reset")
     }
 }
 function slideRight(e) {
 	e.preventDefault();
-    let matrix = window.getComputedStyle(document.querySelector('.slides')).transform
-    matrixValueX = Number(matrix.match(/matrix.*\((.+)\)/)[1].split(', ')[4])
-    if(!(matrixValueX-slideAmount==-Math.abs(slideAmount*data.length))){
-        slides.style.transform = `matrix(1, 0, 0, 1, ${matrixValueX-slideAmount}, 0)`;
+    if(!(matrixValueX()-slideAmount==-Math.abs(slideAmount*data.length))){
+        setSlide(matrixValueX()-slideAmount)
     } else {
-        slides.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
+        setSlide("reset")
     }
 }
 

@@ -17,15 +17,37 @@ data = [
 	},
 ];
 
-const slides = document.querySelector(".slides");
-const dots = document.querySelector(".slider-dots");
-const childNodesDots = document.querySelector(".slider-dots").childNodes
-let slideAmount = 800;
-let slidePosition = 0;
+let sliderSettings={
+    slidePosition: 0,
+    slideWidth: 400,
+    sliderHeight: 800,
+    slideAmount: 400,
+    slideCount: 2,
+    direction: 'vertical'
+}
 
-function generateSlides() {
-	slides.innerHTML = "";
-    dots.innerHTML = "";
+// Select elements
+let customizationCard = document.querySelector('#customization-card');
+let customizationInputs = document.querySelector('#customization-inputs');
+let currentDims = document.querySelector('#current-dims');
+let slides = document.querySelector('.slides');
+let slider = document.querySelector('#slider');
+let sliderDots = document.querySelector('.slider-dots');
+let sliderControls = document.querySelector('.slider-controls');
+
+// Set styles
+function setStyles() {
+    customizationCard.style.width=`${sliderSettings.slideWidth}px`;
+    slides.style.width=`${data.length*sliderSettings.slideWidth}px`;
+    slider.style.width=`${sliderSettings.slideWidth}px`;
+    slider.style.height=`${sliderSettings.sliderHeight}px`;
+    sliderControls.style.width=`calc(${sliderSettings.slideWidth}px - 1rem)`
+}
+
+// Generate slides
+function generateSlides(data){
+    slides.innerHTML = "";
+    sliderDots.innerHTML = "";
 	for (i in data) {
 		let slidesTemplate = `
         <div class="slide">
@@ -33,83 +55,75 @@ function generateSlides() {
         </div>
         `;
 		slides.innerHTML += slidesTemplate;
-        dotsTemplate =`
-        <span onclick="setSlide(${slideAmount-slideAmount*(Number(i)+1)})"></span>
+        sliderDotsTemplate =`
+        <span onclick="setSlide(${sliderSettings.slideAmount-sliderSettings.slideAmount*(Number(i)+1)})"></span>
         `
-        dots.innerHTML += dotsTemplate
+        sliderDots.innerHTML += sliderDotsTemplate
+        sliderDots.children[0].classList.add('active')
 	}
-    slides.style.width = `${slideAmount*data.length}px`
-    slides.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
+    writeDims()
 }
-generateSlides();
 
+// Set Dot
+const setDot = () => {
+    var current = document.getElementsByClassName("active");
+    if (current.length > 0) {
+        current[0].className = current[0].className.replace("active", "");
+    }
+    sliderDots.children[sliderSettings.slidePosition/sliderSettings.slideAmount].classList.add('active')
+}
+
+// Set Slide
 const setSlide = (value) => {
-    value == "reset" ? slides.style.transform = `matrix(1, 0, 0, 1, 0, 0)` : slides.style.transform = `matrix(1, 0, 0, 1, ${value}, 0)`;
+    if (value == "reset"){
+        sliderSettings.slidePosition = 0
+        slides.style.transform = `translateX(0px)`
+    }else{
+        slides.style.transform = `translateX(${value}px)`;
+        sliderSettings.slidePosition = Math.abs(value)
+    }
+    setDot()
 }
 
-let matrixValueX = ()=> {
-    let matrix = window.getComputedStyle(document.querySelector('.slides')).transform
-    return Number(matrix.match(/matrix.*\((.+)\)/)[1].split(', ')[4])
+// Slide Left
+function slideLeft(e){
+    e.preventDefault();
+    if(sliderSettings.slidePosition<=0){
+        sliderSettings.slidePosition=data.length*sliderSettings.slideAmount;
+    }
+    sliderSettings.slidePosition-=sliderSettings.slideAmount;
+    setSlide(`-${sliderSettings.slidePosition}`)
+    setDot()
 }
 
-function slideLeft(e) {
-	e.preventDefault();
-    if(!(matrixValueX()+slideAmount > 0)){
-        setSlide(matrixValueX()+slideAmount)
-    } else {
+// Slide Right
+function slideRight(e){
+    e.preventDefault();
+    sliderSettings.slidePosition+=sliderSettings.slideAmount;
+    if(sliderSettings.slidePosition>(data.length-1)*sliderSettings.slideAmount){
         setSlide("reset")
     }
+    setSlide(`-${sliderSettings.slidePosition}`)
+    setDot()
 }
-function slideRight(e) {
-	e.preventDefault();
-    if(!(matrixValueX()-slideAmount==-Math.abs(slideAmount*data.length))){
-        setSlide(matrixValueX()-slideAmount)
-    } else {
-        setSlide("reset")
+
+// Customize Slider
+function customizeSlider(){
+    if (!(customizationInputs.children[0].value == '' || customizationInputs.children[2].value == '')){
+        sliderSettings.slideWidth = Number(customizationInputs.children[0].value)
+        sliderSettings.slideAmount = Number(customizationInputs.children[0].value)
+        sliderSettings.sliderHeight = Number(customizationInputs.children[2].value)
     }
+    setSlide("reset")
+    generateSlides(data)
+    writeDims()
+    setStyles()
 }
 
-// Alternative
-
-const altSlides = document.querySelector(".alt-slides-wrapper");
-const altDots = document.querySelector(".alt-slider-dots");
-
-function altGenerateSlides() {
-	altSlides.innerHTML = "";
-    altDots.innerHTML = "";
-	for (i in data) {
-		let slidesTemplate = `
-        <div class="alt-slides fade">
-                <img src="${data[i].img}">
-            </div>
-        `;
-		altSlides.innerHTML += slidesTemplate;
-        dotsTemplate =`
-        <span onclick="currentSlide(${Number(i)+1})"></span>
-        `
-        altDots.innerHTML += dotsTemplate
-	}
-}
-altGenerateSlides();
-
-let slideIndex = 1;
-showSlide(slideIndex);
-
-function nextSlide(n) {
-  showSlide(slideIndex += n);
+const writeDims = () => {
+    currentDims.innerHTML = `Current Dims <br> slideWidth : ${sliderSettings.slideWidth} | slideHeight : ${sliderSettings.sliderHeight}`
 }
 
-function currentSlide(n) {
-  showSlide(slideIndex = n);
-}
-
-function showSlide(n) {
-  let i;
-  let slides = document.getElementsByClassName("alt-slides");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slides[slideIndex-1].style.display = "block";  
-}
+// Start app
+generateSlides(data);
+setStyles()

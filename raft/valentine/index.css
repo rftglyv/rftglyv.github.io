@@ -151,7 +151,7 @@ body::-webkit-scrollbar,
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 768px) {
 	.scroll-area {
 		flex-direction: column;
         justify-content: center;

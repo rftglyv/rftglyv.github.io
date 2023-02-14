@@ -170,22 +170,3 @@ body::-webkit-scrollbar,
         padding-bottom: 0.25rem !important;
     }
 }
-@media only screen and (min-width: 768px) {
-	.scroll-area {
-		flex-direction: row;
-        justify-content: space-between;
-	}
-    iframe{
-        width: 50%;
-    }
-    .col-4{
-        width: 33.333333%;
-    }
-    .card-text{
-        font-size: 1rem;
-    }
-    .py-3{
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-    }
-}

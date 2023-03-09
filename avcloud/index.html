@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="public/css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="public/index.css">
+</head>
+<body>
+    <!-- Navbar Wrapper -->
+    <nav class="flex items-center w-4/5 m-auto justify-between lg:w-10/12">
+        <!-- Logo -->
+        <div class="flex w-1/3">
+            <a href="#"><img class="rounded-full w-8" src="public/assets/logo.svg" alt="AV Logo"></a>
+        </div>
+        <!-- Navbar -->
+        <div class="hidden w-full md:flex md:items-center" id="menu">
+            <ul class="hidden lg:flex w-full flex-nowrap justify-between">
+                <li><a href="#">Home page</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="flex justify-end w-1/3">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="menu-button"
+            class="h-6 cursor-pointer lg:hidden block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+        </svg>
+        </div>
+        <!-- Options -->
+        <div class="hidden w-1/3 lg:flex lg:items-center">
+            <ul class="flex w-full justify-end text-lg space-x-6 lg:flex lg:pt-0">
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#"><i class="fa-regular fa-user"></i></a>
+            </ul>
+        </div>
+    </nav>
+    <!-- Intro -->
+    <section class="flex justify-between m-auto w-4/5 mb-16 lg:w-10/12 lg:mt-28 lg:mb-36">
+            <div class="flex flex-col w-full">
+                <h1 class="text-xl text-center h-10 lg:h-16 font-bold lg:text-5xl lg:mb-12 mb-4 max-w-xl">Simplify how you work</h1>
+                <p class="hidden lg:block font-light font-sans text-xl max-w-md mb-7 leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                <div class="flex flex-col">
+                    <a class="lg:w-80 text-center font-medium mb-2.5 py-3 text-blue-500 rounded-full" href="#">Login</a>
+                    <a class="lg:w-80 text-center font-medium py-3 bg-blue-500 text-white rounded-full" href="#">Get started</a>
+                </div>
+            </div>
+            <img class="hidden lg:block" src="public/assets/undraw_connected_world_wuay 1.svg" alt="World Connected">
+    </section>
+    <!-- About Us -->
+    <section class="flex flex-col items-center justify-center w-4/5 lg:w-10/12 m-auto">
+        <h1 class="text-2xl self-start mb-6 lg:self-center lg:mb-14 font-bold lg:text-4xl">About us</h1>
+        <div class="flex lg:space-x-12">
+            <img class="hidden lg:block" src="public/assets/undraw_team_spirit_re_yl1v 1.svg" alt="Team Spirit">
+            <div class="flex flex-col items-start">
+                <p class="mb-14 max-w-lg font-light text-sm md:text-xl leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<span class="hidden md:inline"> printer took a galley of type and scrambled it to make a type specimen.</span><span class="md:hidden" id="dots">...</span><span class="md:hidden" id="more"> printer took a galley of type and scrambled it to make a type specimen.</span><button class="md:hidden ml-2 text-blue-500" onclick="readMore()" id="readMoreBtn">Read more<i class="ml-1 fa-solid fa-angle-right"></i></button></p>
+                <h3 class="hidden md:block mb-5 max-w-xs font-bold text-xl leading-7">Lorem Ipsum is simply dummy text of the printing.</h3>
+                <p class="hidden md:block max-w-xl text-muted font-light text-xl leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+            </div>
+        </div>
+    </section>
+<script src="https://kit.fontawesome.com/44e05cc47c.js" crossorigin="anonymous"></script>
+<script src="public/index.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Navbar Wrapper -->
-    <nav class="flex items-center w-4/5 m-auto justify-between lg:w-10/12">
+    <nav class="flex m-auto items-center justify-between w-4/5 lg:w-10/12">
         <!-- Logo -->
         <div class="flex w-1/3">
             <a href="#"><img class="rounded-full w-8" src="public/assets/logo.svg" alt="AV Logo"></a>
@@ -26,7 +26,7 @@
             </ul>
         </div>
         <!-- Hamburger Icon -->
-        <div class="flex justify-end w-1/3">
+        <div class="flex justify-end w-1/3 lg:hidden">
             <svg
             xmlns="http://www.w3.org/2000/svg"
             id="menu-button"
@@ -54,8 +54,8 @@
     <!-- Intro -->
     <section class="flex justify-between m-auto w-4/5 mb-16 lg:w-10/12 lg:mt-28 lg:mb-36">
             <div class="flex flex-col w-full">
-                <h1 class="text-xl text-center h-10 lg:h-16 font-bold lg:text-5xl lg:mb-12 mb-4 max-w-xl">Simplify how you work</h1>
-                <p class="hidden lg:block font-light font-sans text-xl max-w-md mb-7 leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                <h1 class="text-xl h-10 lg:h-16 font-bold lg:text-5xl lg:mb-12 mb-4 max-w-xl">Simplify how you work</h1>
+                <p class="hidden lg:block font-light font-roboto text-xl max-w-md mb-7 leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
                 <div class="flex flex-col">
                     <a class="lg:w-80 text-center font-medium mb-2.5 py-3 text-blue-500 rounded-full" href="#">Login</a>
                     <a class="lg:w-80 text-center font-medium py-3 bg-blue-500 text-white rounded-full" href="#">Get started</a>
@@ -64,47 +64,47 @@
             <img class="hidden lg:block" src="public/assets/undraw_connected_world_wuay 1.svg" alt="World Connected">
     </section>
     <!-- About Us -->
-    <section class="flex flex-col items-center justify-center w-4/5 lg:w-10/12 m-auto">
+    <section class="flex flex-col  w-4/5 lg:w-10/12 m-auto">
         <h1 class="text-2xl self-start mb-6 lg:self-center lg:mb-14 font-bold lg:text-4xl">About us</h1>
-        <div class="flex lg:space-x-12">
+        <div class="flex justify-between">
             <img class="hidden lg:block" src="public/assets/undraw_team_spirit_re_yl1v 1.svg" alt="Team Spirit">
             <div class="flex flex-col items-start">
-                <p class="mb-14 max-w-lg font-light text-sm md:text-xl leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<span class="hidden md:inline"> printer took a galley of type and scrambled it to make a type specimen.</span><span class="md:hidden" id="dots">...</span><span class="md:hidden" id="more"> printer took a galley of type and scrambled it to make a type specimen.</span><button class="md:hidden ml-2 text-blue-500" onclick="readMore()" id="readMoreBtn">Read more<i class="ml-1 fa-solid fa-angle-right"></i></button></p>
+                <p class="mb-14 max-w-lg font-light text-sm md:text-xl leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<span class="hidden md:inline"> printer took a galley of type and scrambled it to make a type specimen.</span><span class="md:hidden" id="dots">...</span><span class="md:hidden" id="more"> printer took a galley of type and scrambled it to make a type specimen.</span><button class="md:hidden ml-2 text-blue-500" id="readMoreBtn">Read more<i class="ml-1 fa-solid fa-angle-right"></i></button></p>
                 <h3 class="hidden md:block mb-5 max-w-xs font-bold text-xl leading-7">Lorem Ipsum is simply dummy text of the printing.</h3>
                 <p class="hidden md:block max-w-xl text-muted font-light text-xl leading-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
             </div>
         </div>
     </section>
     <!-- Why Us -->
-    <section class="flex flex-col items-center justify-center w-4/5 lg:w-10/12 lg:mt-28 lg:mb-36 m-auto">
+    <section class="flex flex-col items-center justify-center w-4/5 mb-16 lg:w-10/12 lg:mt-28 lg:mb-36 m-auto">
         <div class="flex w-full">
             <h1 class="text-2xl text-left mb-6 lg:mb-14 font-bold lg:text-4xl">Why AV Cloud?</h1>
         </div>
-        <div class="glide">
+        <div class="glide why_us">
             <div class="glide__track m-auto" data-glide-el="track">
-              <ul class="glide__slides">
-                <li class="glide__slide flex justify-center">
-                    <div class="flex flex-col items-center w-full">
-                        <img class="h-56 md:h-96" src="public/assets/undraw_business_deal_re_up4u 1.svg" alt="">
-                        <h3 class="font-bold text-xl leading-7 mt-4">Simple</h3>
-                        <p class="text-sm mb-2 text-muted font-light leading-8 md:text-xl md:mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </li>
-                <li class="glide__slide">
-                    <div class="flex flex-col items-center w-full">
-                        <img class="h-56 md:h-96" src="public/assets/undraw_target_re_fi8j 1.svg" alt="">
-                        <h3 class="font-bold text-xl leading-7 mt-4">Fast</h3>
-                        <p class="text-sm mb-2 text-muted font-light leading-8 md:text-xl md:mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </li>
-                <li class="glide__slide">
-                    <div class="flex flex-col items-center w-full">
-                        <img class="h-56 md:h-96" src="public/assets/undraw_business_deal_re_up4u 1.svg" alt="">
-                        <h3 class="font-bold text-xl leading-7 mt-4">Safe</h3>
-                        <p class="text-sm mb-2 text-muted font-light leading-8 md:text-xl md:mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </li>
-              </ul>
+                <ul class="glide__slides">
+                    <li class="glide__slide flex justify-center">
+                        <div class="flex flex-col items-center w-full">
+                            <img class="h-56 md:h-96" src="public/assets/undraw_business_deal_re_up4u 1.svg" alt="">
+                            <h3 class="font-bold text-xl leading-7 mt-4">Simple</h3>
+                            <p class="text-sm mt-1 mb-2 text-muted font-light leading-8 md:text-xl md:mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="flex flex-col items-center w-full">
+                            <img class="h-56 md:h-96" src="public/assets/undraw_target_re_fi8j 1.svg" alt="">
+                            <h3 class="font-bold text-xl leading-7 mt-4">Fast</h3>
+                            <p class="text-sm mt-1 mb-2 text-muted font-light leading-8 md:text-xl md:mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="flex flex-col items-center w-full">
+                            <img class="h-56 md:h-96" src="public/assets/undraw_business_deal_re_up4u 1.svg" alt="">
+                            <h3 class="font-bold text-xl leading-7 mt-4">Safe</h3>
+                            <p class="text-sm mt-1 mb-2 text-muted font-light leading-8 md:text-xl md:mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </li>
+                  </ul>
             </div>
             <div class="glide__arrows" data-glide-el="controls">
                 <button class="left-0 glide__arrow glide__arrow--left" data-glide-dir="<"><i class="text-3xl fa-solid fa-angle-left"></i></button>
@@ -117,15 +117,49 @@
             </div>
         </div>
     </section>
+    <!-- Pricing -->
+    <section class="flex flex-col items-center m-auto w-4/5 mb-16 lg:w-10/12 lg:mt-28 lg:mb-36">
+        <h1 class="text-2xl self-start mb-20 lg:self-center lg:mb-14 font-bold lg:text-4xl">Pricing</h1>
+        <div class="hide-scroll overflow-x-scroll cards-container flex w-full justify-evenly">
+            <div class="card flex flex-col items-center max-w-xs w-3/4 px-4 py-10 lg:w-1/3 lg:px-12 lg:py-20">
+                <div class="flex flex-col items-center space-y-0.5">
+                    <h5 class="currency uppercase font-bold text-sm leading-5 lg:text-2xl lg:leading-8">Free</h5>
+                    <p class="font-roboto font-light text-sm leading-4 lg:text-lg lg:leading-5 text-blue-500">For Individuals</p>
+                </div>
+                <div class="flex flex-col items-center mt-4 space-y-0.5">
+                    <h2 class="currency font-extrabold text-3xl leading-8 lg:text-4xl lg:leading-10"><span class="font-roboto font-black text-xs lg:text-base align-super">&dollar;</span>0,00</h2>
+                    <p class="text-muted font-roboto font-light text-xs lg:text-lg leading-4">per user/month</p>
+                </div>
+                <p class="mt-6 text-sm lg:text-base text-center h-28 lg:h-auto">Safely store and share all your content. This plan has room for PDFs, personal docs, and much more.</p>
+                <a class="mt-14 text-center font-medium px-5 py-1 lg:px-20 lg:py-2 text-blue-500" href="#">Try it</a>
+            </div>
+            <div class="card flex flex-col items-center max-w-xs w-3/4 px-4 py-10 lg:w-1/3 lg:px-12 lg:py-20">
+                <div class="flex flex-col items-center space-y-0.5">
+                    <h5 class="currency uppercase font-bold text-sm leading-5 lg:text-2xl lg:leading-8">Business</h5>
+                    <p class="font-roboto font-light text-sm leading-4 lg:text-lg lg:leading-5 text-blue-500">For Exporter</p>
+                </div>
+                <div class="flex flex-col items-center mt-4 space-y-0.5">
+                    <h2 class="currency font-extrabold text-3xl leading-8 lg:text-4xl lg:leading-10"><span class="font-roboto font-black text-xs lg:text-base align-super">&dollar;</span>16,99</h2>
+                    <p class="text-muted font-roboto font-light text-xs lg:text-lg leading-4">per user/month</p>
+                </div>
+                <p class="mt-6 text-sm lg:text-base text-center h-28 lg:h-auto">Keep your export files organized and connected with all your clients and a place for sharing—all under one plan.</p>
+                <a class="mt-14 text-center font-medium bg-blue-500 text-white rounded-full px-5 py-1 lg:px-20 lg:py-2" href="#">Buy it</a>
+            </div>
+            <div class="card flex flex-col items-center max-w-xs w-3/4 px-4 py-10 lg:w-1/3 lg:px-12 lg:py-20">
+                <div class="flex flex-col items-center space-y-0.5">
+                    <h5 class="currency uppercase font-bold text-sm leading-5 lg:text-2xl lg:leading-8">Professional</h5>
+                    <p class="font-roboto font-light text-sm leading-4 lg:text-lg lg:leading-5 text-blue-500">For Logistics</p>
+                </div>
+                <div class="flex flex-col items-center mt-4 space-y-0.5">
+                    <h2 class="currency font-extrabold text-3xl leading-8 lg:text-4xl lg:leading-10"><span class="font-roboto font-black text-xs lg:text-base align-super">&dollar;</span>24,99</h2>
+                    <p class="text-muted font-roboto font-light text-xs lg:text-lg leading-4">per user/month</p>
+                </div>
+                <p class="mt-6 text-sm lg:text-base text-center h-28 lg:h-auto">Safely store and share all your content. This plan has room for PDFs, personal docs, and much more.</p>
+                <a class="mt-14 text-center font-medium bg-blue-500 text-white rounded-full px-5 py-1 lg:px-20 lg:py-2" href="#">Buy it</a>
+            </div>
+        </div>
+    </section>
+<script type="module" src="public/index.js"></script>
 <script src="https://kit.fontawesome.com/44e05cc47c.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-<script>
-    new Glide('.glide',{
-  type: 'slider',
-  startAt: 0,
-  perView: 1
-}).mount()
-</script>
-<script type="module" src="index.js"></script>
 </body>
 </html>

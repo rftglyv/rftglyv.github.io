@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component</title>
+  <link rel="stylesheet" href="/rftglyv.github.io/tasks/css/glide.theme.css">
+  <link rel="stylesheet" href="/rftglyv.github.io/tasks/css/glide.core.css">
+  <link rel="stylesheet" href="/rftglyv.github.io/tasks/css/style.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="w-screen h-screen flex flex-col items-center justify-center fade-in">
+    <div class="glide hidden cards w-2/5 p-10">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="left-0 glide__arrow glide__arrow--left" data-glide-dir="<"><i
+            class="text-3xl fa-solid fa-angle-left"></i></button>
+        <button class="right-0 glide__arrow glide__arrow--right" data-glide-dir=">"><i
+            class="text-3xl fa-solid fa-angle-right"></i></button>
+      </div>
+    </div>
+    <div class="w-2/5">
+      <div id="inputWrapper" class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden relative">
+        <div id="inputPane" class="p-4 text-white flex flex-col items-center space-y-4">
+          <form class="text-center" method="post">
+            <span class="space-y-2">
+              <span class="space-x-2">
+                <span class="block font-medium text-lg">User data</span>
+                <input class="required input" type="text" placeholder="First" id="fName">
+                <input class="required input" type="text" placeholder="Last" id="lName">
+                <br>
+                <input class="required input" placeholder="Username" type="text" id="uName">
+                <input class="input" placeholder="Image URL" type="url" id="img">
+              </span>
+              <span id="detailsInput" class="hidden space-x-2">
+                <span class="block font-medium text-lg">Counter</span>
+                <input class="input" placeholder="Follows" type="number" id="follows">
+                <input class="input" placeholder="Projects" type="number" id="projects">
+                <input class="input" placeholder="Completion" type="number" id="completion">
+                <span class="block font-medium text-lg">Usernames</span>
+                <input class="input" placeholder="LinkedIn" type="text" id="liURL">
+                <input class="input" placeholder="Facebook" type="text" id="fbURL">
+                <input class="input" placeholder="Twitter" type="text" id="twURL">
+              </span>
+            </span>
+          </form>
+          <button id="submitBtn" class="submit w-1/3 m-auto text-lg">Add User</button>
+        </div>
+        <i id="inputPaneBtn"
+          class="absolute right-4 top-4 cursor-pointer text-white text-2xl fa-solid fa-down-left-and-up-right-to-center"></i>
+      </div>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/44e05cc47c.js" crossorigin="anonymous"></script>
+  <script type="module" src="slider.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

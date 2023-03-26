@@ -1,0 +1,142 @@
+@-webkit-keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes scale-up-top {
+	0% {
+		-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+		-webkit-transform-origin: 50% 0%;
+		transform-origin: 50% 0%;
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 50% 0%;
+		transform-origin: 50% 0%;
+	}
+}
+
+@keyframes scale-up-top {
+	0% {
+		-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+		-webkit-transform-origin: 50% 0%;
+		transform-origin: 50% 0%;
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 50% 0%;
+		transform-origin: 50% 0%;
+	}
+}
+
+@keyframes shake {
+	25% {
+		transform: translateX(4px);
+	}
+
+	50% {
+		transform: translateX(-4px);
+	}
+
+	75% {
+		transform: translateX(4px);
+	}
+}
+
+.shake {
+	animation: shake 0.5s;
+}
+
+.invalid {
+	border: 2px solid red;
+}
+
+.scale-up-top {
+	-webkit-animation: scale-up-top 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+	animation: scale-up-top 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.fade-in {
+	-webkit-animation: fade-in 1s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+	animation: fade-in 1s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+}
+
+body {
+	background: url("assets/bg.svg");
+}
+
+.card-wrapper {
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
+}
+
+.profile-pic {
+	background-size: 125%;
+	background-color: #0066ff85;
+	background-repeat: no-repeat;
+}
+
+input {
+	padding: 0.5rem;
+	margin: 8px 0;
+	border-radius: 0.25rem;
+	background: rgba(255, 255, 255, 0.7);
+	color: black;
+	outline: none;
+	border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+input::placeholder {
+	color: black;
+}
+
+input:focus {
+	border: 2px solid #555;
+}
+
+.submit {
+	display: inline-block;
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+	color: #fff;
+	font-weight: 500;
+	border-radius: 4px;
+	height: 36px;
+	padding: 0px 1.5rem;
+	text-shadow: rgb(0 0 0 / 25%) 0px 3px 8px;
+	background: #002864;
+	transition: all 0.5s ease 0s;
+}
+
+.submit:hover {
+	box-shadow: 1px 1px 4px 4px #0066ff85;
+	-webkit-box-shadow: 1px 1px 4px 4px #0066ff85;
+	-moz-box-shadow: 1px 1px 4px 4px #0066ff85;
+	transition: all 0.3s ease-in-out 0s;
+	background: #004ab9;
+}

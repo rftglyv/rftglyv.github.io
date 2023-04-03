@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/44e05cc47c.js" crossorigin="anonymous"></script>
+    <title>Credit Card</title>
+</head>
+
+<body class="flex items-center justify-center w-screen h-screen">
+    <!-- Card Wrapper -->
+    <div class="slide-in-blurred-bottom card-wrapper p-4">
+        <!-- Card -->
+        <div class="card justify-between h-full flex flex-col">
+            <span class="mb-4 flex justify-between items-center">
+                <span id="ccUser" class="ccEdit text-2xl">John Carter</span>
+                <img class="nfc w-5 h-6" src="assets/nfc.png" alt="NFC">
+            </span>
+            <span>
+                <span class="text-detail">Card Number</span>
+                <span id="ccNum" class="ccEdit block text-lg">4120 3877 0677 3411</span>
+            </span>
+            <div class="flex justify-between items-end">
+                <span class="flex space-x-5">
+                    <span class="space-y-0.5">
+                        <span class="text-detail">Expiry Date</span>
+                        <span id="ccExpDate" class="ccEdit block text-xs">03/27</span>
+                    </span>
+                    <span class="space-y-0.5">
+                        <span class="text-detail">CVV</span>
+                        <span id="ccCCV" class="ccEdit block text-xs">328</span>
+                    </span>
+                </span>
+                <img class="ccCompany w-11 h-4" src="assets/visa.png" alt="ccCompany">
+            </div>
+        </div>
+    </div>
+
+    <p class="utils">Click card details to edit</p>
+    <button id="src-btn">Capture Screenshot</button>
+    <div class="hidden src-preview">
+        <div class="screenshot">
+            <i id="close-btn" class="fa-solid fa-xmark"></i>
+            <img src="" alt="screenshot">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

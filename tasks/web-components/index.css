@@ -84,6 +84,7 @@
 
 body {
 	background: url("assets/bg.svg");
+	background-image: cover;
 }
 
 .card-wrapper {

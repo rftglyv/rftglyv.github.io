@@ -17,9 +17,10 @@ function setHandsAndTime() {
   const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30);
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
+  fH = padding(hour);
   fM = padding(mins);
   fS = padding(secs);
-  document.title =  hour + ":" + fM + ":" + fS;
+  document.title =  fH + ":" + fM + ":" + fS;
 
   function padding(i) {
     if (i < 10) {i = "0" + i};

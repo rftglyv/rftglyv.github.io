@@ -96,10 +96,11 @@ var countDown = setInterval(function () {
     document.querySelector(".counter-container").innerHTML = "Happy Birthday Rat !";
   }
 
+  if ((distance + day > 0) && (distance < 0)) {
+    setTimeout(() => { location.replace("https://rftglyv.github.io/raft/hbd") }, 2000);
+  }
+
   if (distance + day < 0) {
     document.querySelector(".counter-container").style = "display:none;";
-  }
-  else {
-    setTimeout(() => { location.replace("https://rftglyv.github.io/raft/hbd") }, 3000);
   }
 }, 1000);

@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap');
 
 @keyframes fadeIn {
 	0% {
 		opacity: 0%;
 	}
+
 	100% {
 		opacity: 100%;
 	}
@@ -25,11 +26,9 @@ body {
 	height: 100%;
 	width: 100%;
 	background: rgb(255, 185, 155);
-	background: linear-gradient(
-		180deg,
-		rgb(230, 160, 140) 0%,
-		rgb(130, 180, 220) 100%
-	);
+	background: linear-gradient(180deg,
+			rgb(230, 160, 140) 0%,
+			rgb(130, 180, 220) 100%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -65,6 +64,7 @@ body {
 	height: 100%;
 	background: white;
 	animation: 1s infinite bg;
+	z-index: 999;
 }
 
 .heart {
@@ -79,7 +79,9 @@ body {
 	width: 50px;
 	transform: rotate(-45deg);
 	animation: 1s infinite beat;
+	z-index: 1000;
 }
+
 .heart:after {
 	background-color: pink;
 	content: "";
@@ -90,6 +92,7 @@ body {
 	top: 0px;
 	left: 25px;
 }
+
 .heart:before {
 	background-color: pink;
 	content: "";
@@ -111,6 +114,7 @@ body {
 	0% {
 		transform: scale(1) rotate(-45deg);
 	}
+
 	50% {
 		transform: scale(0.6) rotate(-45deg);
 	}
@@ -146,11 +150,9 @@ body {
 	gap: 30px;
 }
 
-
-.date-wrapper {
+.date-wrapper,
+.counter-container {
 	animation: 1s linear 0s fadeIn;
-	width: 80px;
-	height: 80px;
 	background-color: rgba(220, 220, 220, 0.5);
 	border-radius: 10px;
 	mix-blend-mode: multiply;
@@ -158,6 +160,29 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.counter-container {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	margin-bottom: 4rem;
+	font-family: "Karla", sans-serif;
+	font-weight: 700;
+	font-size: larger;
+	justify-content: space-evenly;
+}
+
+#countDown {
+	margin-top: 0.5rem;
+	font-size: medium;
+	font-weight: 500;
+}
+
+.date-wrapper {
+	width: 80px;
+	height: 80px;
 }
 
 .date-container h2 {
@@ -177,6 +202,11 @@ body {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
+
+	body {
+		flex-direction: row;
+	}
+
 	.date-container {
 		width: 100%;
 		display: flex;
@@ -186,11 +216,17 @@ body {
 	}
 
 	.date-container h2,
-	.date-container p, 
-	.heart {
+	.date-container p,
+	.heart,
+	.counter-container {
 		rotate: 90deg;
 	}
+
+	.counter-container {
+		margin-bottom: 0;
+	}
 }
+
 @media only screen and (max-width: 992px) {
 	#cursor {
 		display: none !important;

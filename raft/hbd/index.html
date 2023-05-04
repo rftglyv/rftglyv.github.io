@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <iframe allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="bgSound" controls loop style="display: none">
+        <source src="assets/Rex Orange County - THE SHADE (Lyrics).mp3" type="audio/mpeg">
+    </audio>
     <div class="back"></div>
     <div class="heart"></div>
     <div class="balloon-wrapper">
@@ -62,6 +66,9 @@
         const preLoader = () => {
             document.querySelector(".back").style.display = "none";
             document.querySelector(".heart").style.display = "none";
+            bgSound = document.getElementById("bgSound");
+            bgSound.volume = 0.05;
+            bgSound.play()
         }
         setInterval(preLoader, 2000);
     </script>

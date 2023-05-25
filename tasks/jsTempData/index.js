@@ -36,7 +36,7 @@ mainMenu.addEventListener("change", () => {
 })
 
 addNews.addEventListener("click", () => {
-    if (mainMenu.selectedIndex && subMenu.selectedIndex !== 0) {
+    if (mainMenu.selectedIndex && subMenu.selectedIndex !== 0 || subMenu.disabled == true) {
         let tag = categories[mainMenu.value].sub == 0 ? mainMenu.options[mainMenu.selectedIndex].text : subMenu.options[subMenu.selectedIndex].text
         catTag = `
         <button onclick="this.parentNode.removeChild(this)" class="d-flex align-items-center justify-content-between me-2 p-2 fs-6 alert alert-primary category">

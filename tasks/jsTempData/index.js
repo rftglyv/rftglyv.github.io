@@ -4,9 +4,12 @@ let mainMenu = document.getElementById("mainMenu"),
     catTags = document.getElementById("catTags");
 
 let categories = [
-    { name: "Ölkə", sub: ["Cəmiyyət", "Hava", "Kriminal"] },
+    { name: "Ölkə", sub: ["Cəmiyyət", "Hava", "Kriminal", "Hadisə", "Breyn Rinq"] },
     { name: "İqtisadiyyat", sub: ["Sərgilər", "Banklar"] },
-    { name: "İdman", sub: [] }
+    { name: "İdman", sub: [] },
+    { name: "Maraqlı", sub: ["Video", "Audio", "Dizayn", "Avto", "Tarix", "Seriallar", "Elm", "Din", "Qoroskop", "Kitablar"] },
+    { name: "Sağlamlıq", sub: [] },
+    { name: "Dünya", sub: ["Rusiya", "Amerika", "İtalya", "Fransa", "İspaniya", "Yaponya", "Koreya", "Çin"] }
 ]
 
 for (let i = 0; i < categories.length; i++) {

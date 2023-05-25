@@ -1,0 +1,33 @@
+@keyframes blink {
+    0% {
+        outline: 3px solid red;
+    }
+
+    50% {
+        outline: 3px solid yellow;
+    }
+
+    100% {
+        outline: 3px solid red;
+    }
+}
+
+.category {
+    width: 15rem;
+}
+
+#mainMenu,
+#subMenu {
+    width: 45%;
+}
+
+.x-btn:hover {
+    cursor: pointer;
+    color: red;
+    transform: scale(1.05);
+    transition: 0.15s linear;
+}
+
+.alert-added {
+    animation: blink 1s linear infinite;
+}

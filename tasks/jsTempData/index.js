@@ -40,8 +40,7 @@ addNews.addEventListener("click", () => {
         let tag = categories[mainMenu.value].sub == 0 ? mainMenu.options[mainMenu.selectedIndex].text : subMenu.options[subMenu.selectedIndex].text
         catTag = `
         <button onclick="this.parentNode.removeChild(this)" class="d-flex align-items-center justify-content-between me-2 p-2 fs-6 alert alert-primary category">
-            <span name="${tag}">${tag}</span> 
-            <i class="fa-solid fa-xmark fs-4 x-btn"></i>
+            <span name="${tag}">${tag}</span>
         </button>
         `
         btnTag = document.getElementsByName(tag)

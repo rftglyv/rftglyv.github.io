@@ -21,11 +21,11 @@
     width: 45%;
 }
 
-.x-btn:hover {
+.category:hover {
     cursor: pointer;
-    color: red;
-    transform: scale(1.05);
-    transition: 0.15s linear;
+    transform: scale(1.025);
+    transition: 0.15s ease-in-out;
+    outline: 3px solid red;
 }
 
 .alert-added {

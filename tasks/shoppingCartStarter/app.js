@@ -24,6 +24,16 @@ let products = [
     }
 ];
 
+// getProductById() function to get the product with the given id
+
+function getProductById(id) {
+    let productId = id,
+    product = products.find(function (product) {
+        return product.id == productId;
+    });
+    return product
+}
+
 // Create a function renderCatalog() to render the products in the catalog
 
 let catalog = document.querySelector(".products .row");
@@ -102,10 +112,7 @@ let addToCartBtns = document.querySelectorAll(".product-card .btn");
 
 addToCartBtns.forEach(function (btn) {
     function addToCart() {
-        let productId = btn.parentElement.id;
-        let product = products.find(function (product) {
-            return product.id == productId;
-        });
+        product = getProductById(btn.parentElement.id)
         if (!checkProductAdded(product)) {
             renderCart(product);
             quantityInputs = document.querySelectorAll("#quantity input")
@@ -138,10 +145,7 @@ function calculateSubTotal(inputs){
     if (inputs.length !== 0){
         inputs.forEach(function (input) {
             input.addEventListener("change", function () {
-                let productId = input.id,
-                product = products.find(function (product) {
-                    return product.id == productId;
-                });
+                product = getProductById(input.id)
                 let subTotal = document.querySelector(`#subTotal-${product.id} span`);
                 subTotal.innerHTML = `${product.price * Number(input.value)}` ;
                 calculateTotal();
@@ -216,10 +220,7 @@ function readCart(){
         orderBody.classList.remove("d-none")
         cartEmpty.classList.add("d-none")
         cartContentJSON[0].products.forEach(function (data, index) {
-            let productId = data.id,
-            product = products.find(function (product) {
-                return product.id == productId;
-            });
+            product = getProductById(data.id)
             qty = data.qty;
             renderOrders(product, index, qty);
         })

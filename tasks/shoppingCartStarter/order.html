@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container shopping-card my-3">
+        <h3>
+            Order
+        </h3>
+        <hr class="my-3">
+        <div class="row">
+            <span id="cartEmpty" class="d-flex flex-column align-items-center">
+                <h3 class="text-center">
+                    Shopping Cart is empty
+                </h3>
+                <img src="images/cart-empty.png" width="256" alt="" srcset="">
+                <a href="index.html" class="px-5 py-2 btn btn-primary">Go Back</a>
+            </span>
+            <div id="sOrderBody" class="d-none col-md-12">
+                <!-- create order -->
+                <div class="card" bis_skin_checked="1">
+                    <div class="card-body" bis_skin_checked="1">
+                        <h5 id="orderProducts" class="card-text d-flex flex-column">
+                          Products
+                        </h5>
+                        <h5 class="card-title">Total : <span id="total"></span> ₼</h5>
+                    </div>
+                    <div class="card-footer text-center" bis_skin_checked="1">
+                        <a href="index.html" class="px-3 py-2 btn btn-primary">Continue Shopping</a>
+                        <a href="#" class="px-5 py-2 btn btn-success">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+@keyframes blink {
+    0% {
+        outline: 3px solid red;
+    }
+
+    50% {
+        outline: 3px solid yellow;
+    }
+
+    100% {
+        outline: 3px solid red;
+    }
+}
+
+.alert-added {
+    animation: blink 1s linear infinite;
+}

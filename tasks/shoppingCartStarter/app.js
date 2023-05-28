@@ -163,8 +163,8 @@ function calculateTotal(){
     subTotal.forEach(function (sub) {
         total += Number(sub.innerText);
     })
-    saveCart()
     document.querySelector("#total").innerHTML = total;
+    return total
 }
 
 // remBtn() function to remove the selected product from the cart
@@ -179,6 +179,8 @@ function remBtn(product) {
 }
 
 // saveCart() function to save the cart to local storage
+
+let saveBtn = document.getElementById("saveBtn");
 
 function saveCart(){
     let cartContent = [],
@@ -199,6 +201,12 @@ function saveCart(){
     localStorage.setItem("cartContent", cartContentJSON);
 }
 
+try{
+    saveBtn.addEventListener("click", saveCart);
+}
+catch(err){}
+
+
 // renderOrders() function to render the orders in the order.html page
 
 let orderBody = document.getElementById("sOrderBody"),
@@ -215,17 +223,41 @@ function renderOrders(product, index, qty) {
 // readCart() function to read the cart from local storage
 
 function readCart(){
-    let cartContentJSON = JSON.parse(localStorage.getItem("cartContent"));
+    try{
+        let cartContentJSON = JSON.parse(localStorage.getItem("cartContent"));
     if (cartContentJSON[0].products.length != 0){
         orderBody.classList.remove("d-none")
-        cartEmpty.classList.add("d-none")
         cartContentJSON[0].products.forEach(function (data, index) {
             product = getProductById(data.id)
             qty = data.qty;
             renderOrders(product, index, qty);
         })
     }else{
-        orderBody.classList.add("d-none")
+        cartEmpty.classList.remove("d-none")
     }
+    }catch(err){}
 }
 readCart()
+
+// order() function to order the products in the cart
+
+let orderComplete = document.getElementById("orderComplete"),
+orderBtn = document.getElementById("orderBtn"),
+cancelBtn = document.getElementById("cancelBtn"),
+trigger = document.querySelector(".trigger");
+
+function orderAnim(){
+    trigger.classList.toggle("drawn")
+}
+
+function order(){
+    orderComplete.classList.toggle("d-none")
+    orderBody.classList.toggle("d-none")
+    orderTotal.innerText = calculateTotal()
+    orderAnim()
+}
+
+try {
+    orderBtn.addEventListener("click", order);
+cancelBtn.addEventListener("click", order)
+} catch (err){}

@@ -54,7 +54,7 @@ const counter = () => {
     confetti({
       particleCount: 300,
       startVelocity: 40,
-      spread: 360,
+      spread: 720,
       origin:
       {
         x: Math.random() - 0.1,
@@ -76,7 +76,7 @@ window.addEventListener('mousemove', moveCursor)
 
 // Special Events counter
 
-var countDownDate = new Date("May 5, 2023 00:00:00").getTime();
+var countDownDate = new Date("July 12, 2023 00:00:00").getTime();
 
 var countDown = setInterval(function () {
   var now = new Date().getTime();
@@ -93,11 +93,30 @@ var countDown = setInterval(function () {
 
   if (distance < 0) {
     clearInterval(countDown);
-    document.querySelector(".counter-container").innerHTML = "Happy Birthday Rat !";
+    document.querySelector(".counter-container").innerHTML = "Happy Birthday Raf !";
   }
 
   if ((distance + day > 0) && (distance < 0)) {
-    setTimeout(() => { location.replace("https://rftglyv.github.io/raft/hbd") }, 2000);
+    var duration = 30 * 1000;
+    var end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 7,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+      });
+      confetti({
+        particleCount: 7,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 }
+      });
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
   }
 
   if (distance + day < 0) {

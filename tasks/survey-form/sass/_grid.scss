@@ -1,0 +1,4 @@
+@function calcCol ($col){
+    $width: calc((100%/12)*$col);
+    @return $width
+}

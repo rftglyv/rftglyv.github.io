@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/44e05cc47c.js" crossorigin="anonymous"></script>
+    <title>Annova</title>
+</head>
+<body>
+    <div class="survey-form survey-form__container">
+        <div class="container-top survey-form_align_y">
+            <span class="progress-bar__survey-form">Progress</span>
+        </div>
+        <div class="container-body">
+            <div class="header__survey-form survey-form_padding-sx">Enter your personal info</div>
+            <div class="body__survey-form">
+                <span class="col-6 survey-form_align_y survey-form_padding-sx">
+                    <input type="text" placeholder="First Name" class="survey-form__form survey-form__input_text">
+                    <input type="text" placeholder="Last Name" class="survey-form__form survey-form__input_text">
+                    <input type="text" placeholder="Your Email" class="survey-form__form survey-form__input_text">
+                </span>
+                <span class="col-6 survey-form_align_y survey-form_padding-sx">
+                    <select name="country" class="survey-form__form survey-form__input_select">
+                        <option selected>Select your country</option>
+                        <option>Europe</option>
+                        <option>Asia</option>
+                        <option>North America</option>
+                        <option>South America</option>
+                    </select>
+                    <span class="survey-form_align_x">
+                        <input type="number" min="0" value="0" class="survey-form__form survey-form__input_number">
+                        <span class="survey-form_padding-sx survey-form__text_m">Your incrementer</span>
+                    </span>
+                    <span class="survey-form_align_x">
+                        <input type="text" placeholder="Age" class="survey-form__form survey-form__input_text">
+                        <span class="survey-form_align_x">
+                            <input id="gender-male" type="radio" name="gender" class="survey-form__input_radio">
+                            <label for="gender-male" class="label_gender">Male</label>
+                        </span>
+                        <span class="survey-form_align_x">
+                            <input id="gender-female" type="radio" name="gender" class="survey-form__input_radio">
+                            <label for="gender-female" class="label_gender">Female</label>
+                        </span>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="container-bottom"></div>
+    </div>
+</body>
+</html>

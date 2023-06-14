@@ -1,0 +1,33 @@
+@import "variables";
+
+@function colorize($color, $selector){
+    @if $selector == border{
+        $return : "border-color : #{$color}";
+        @return $return
+    }@else if $selector == outline{
+        $return : "outline-color : #{$color}";
+        @return $return
+    }
+};
+
+@mixin padding($direction, $amount){
+    @if $direction == x {
+        padding-left: $amount * $root-font-size;
+        padding-right: $amount * $root-font-size;
+    }@else if $direction == y {
+        padding-top: $amount * $root-font-size;
+        padding-bottom: $amount * $root-font-size;
+    }@else if $direction == xy {
+        padding: $amount * $root-font-size;
+    }
+};
+
+@mixin flex-align-y{
+    display: flex;
+    flex-direction: column;
+};
+
+@mixin flex-align-x{
+    display: flex;
+    flex-direction: row;
+};

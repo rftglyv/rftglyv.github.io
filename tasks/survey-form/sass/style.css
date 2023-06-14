@@ -1,0 +1,212 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.survey-form__container {
+  margin: 5rem auto;
+  width: 66.6666666667%;
+  border: solid 1px rgba(119, 119, 119, 0.5254901961);
+  box-shadow: 0 0 5px #777;
+}
+.survey-form__container .container-body {
+  width: 83.3333333333%;
+  padding: 50px 75px 35px;
+  margin: auto;
+}
+.survey-form__container .container-body .header__survey-form {
+  font-size: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.survey-form__container .container-body .survey-form__input_text, .survey-form__container .container-body .survey-form__input_number, .survey-form__container .container-body .survey-form__input_select {
+  background: #fbfbfb;
+  border: 2px solid #d5d5d5;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  box-shadow: none;
+  color: #999;
+  height: 2.5rem;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 25px;
+  font-family: "Open Sans", Arial, sans-serif;
+  padding: 6px 12px;
+}
+.survey-form__container .container-body .survey-form__input_number {
+  text-align: center;
+  width: 80px;
+}
+.survey-form__container .container-body .survey-form__input_number::-webkit-inner-spin-button {
+  opacity: 1 !important;
+  background: transparent !important;
+  border-width: 0px;
+  margin: 0;
+  height: 36px;
+  width: 48px;
+  cursor: pointer;
+}
+.survey-form__container .container-body .survey-form__input_select {
+  padding: 5px 15px;
+  height: 56px;
+  cursor: pointer;
+}
+.survey-form__container .container-body select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+.survey-form__container .container-body .survey-form__input_radio {
+  opacity: 0;
+  position: absolute;
+}
+.survey-form__container .container-body .survey-form__input_radio, .survey-form__container .container-body .label_gender {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+.survey-form__container .container-body .label_gender {
+  position: relative;
+}
+.survey-form__container .container-body .survey-form__input_radio + .label_gender:before {
+  content: "";
+  background: #fff;
+  border: 2px solid gray;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.125rem;
+  margin-right: 0.75rem;
+  text-align: center;
+}
+.survey-form__container .container-body .survey-form__input_radio + .label_gender:before {
+  border-radius: 50%;
+}
+.survey-form__container .container-body .survey-form__input_radio:checked + .label_gender:before {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  color: white;
+  background: gray;
+}
+.survey-form__container .container-top {
+  padding: 1rem 5rem;
+  margin: auto;
+  align-items: center;
+}
+.survey-form__container .container-top .progress-bar__survey-form {
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+.survey-form__container .container-bottom {
+  margin: auto;
+}
+
+.body__survey-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.survey-form_align_y {
+  display: flex;
+  flex-direction: column;
+}
+
+.survey-form_padding-mx {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.survey-form_padding-sx {
+  padding-left: 16px;
+  padding-right: 16px;
+}/*# sourceMappingURL=style.css.map */

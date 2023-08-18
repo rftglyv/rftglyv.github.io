@@ -128,9 +128,22 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	font-size: 5rem;
-	& > i {
-		font-size: 10rem;
+}
+
+@media (max-width: 576px) {
+	.rocket > i {
+		font-size: 7.5rem;
+	}
+	.rocket > span {
+		font-size: 3rem;
+	}
+}
+@media (min-width: 768px) {
+	.rocket > i {
+		font-size: 7.5rem;
+	}
+	.rocket > span {
+		font-size: 5rem;
 	}
 }
 

@@ -43,10 +43,6 @@ body {
 	transition: background-color 0.5s ease-in-out;
 }
 
-.rocket > h1 {
-	font-size: 3rem;
-}
-
 .glass-dark {
 	background: rgba(33, 37, 41, 0.95);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

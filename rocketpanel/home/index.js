@@ -1,5 +1,8 @@
 let servicesWrapper = document.querySelector('.services'),
-    pillsWrapper = document.querySelector('.services-pills')
+    pillsWrapper = document.querySelector('.services-pills'),
+    upBtn = document.querySelector('.upBtn');
+
+upBtn.addEventListener('click', () => { window.scrollTo(0, 0) })
 
 function renderServices(service) {
     let html =

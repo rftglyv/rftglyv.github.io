@@ -3,7 +3,6 @@ const sections = document.querySelectorAll("section"),
     navbarToggler = document.querySelector('.navbar-toggler'),
     navLinks = document.querySelectorAll('.navbar-nav .nav-item .nav-link'),
     menuToggle = document.getElementById('navbarCollapse'),
-    upBtn = document.querySelector('.upBtn'),
     bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
 
 window.addEventListener('scroll', () => {
@@ -56,5 +55,3 @@ navLinks.forEach((link) => {
         navBgSetter()
     })
 })
-
-upBtn.addEventListener('click', () => { window.scrollTo(0, 0) })

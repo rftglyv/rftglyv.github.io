@@ -39,7 +39,7 @@ function renderSection(data) {
     let tabs = document.querySelectorAll('[role="tab"]');
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            pillsWrapper.scrollIntoView(true, { behavior: 'smooth' })
+            servicesWrapper.scrollIntoView(true, { behavior: 'smooth' })
             servicesWrapper.innerHTML = ""
             data.services.forEach((service) => {
                 if (tab.name == "All") {

@@ -1,0 +1,28 @@
+body {
+	background: #001829;
+}
+
+.form-control,
+.progress {
+	background-color: transparent !important;
+}
+
+.form-control {
+	border-color: var(--bs-card-border-color);
+}
+
+form {
+	min-height: 40vh;
+}
+
+.error-message {
+	color: red;
+}
+
+.outline-error {
+	border-color: red;
+}
+
+.outline-success {
+	border-color: green;
+}

@@ -20,8 +20,8 @@
 }
 
 .fade-out {
-	-webkit-animation: fade-out 1s ease-out 4s both;
-	        animation: fade-out 1s ease-out 4s both;
+    -webkit-animation: fade-out 1s ease-out 4s both;
+    animation: fade-out 1s ease-out 4s both;
 }
 
 * {
@@ -48,6 +48,7 @@ body {
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    cursor: url('https://i.ibb.co/w0vtDqg/cursor.png'), auto;
 }
 
 /* CONFETTI */
@@ -78,6 +79,7 @@ body {
     background: #0D0D0D;
     z-index: 999;
     color: #fff !important;
+    cursor: none;
 }
 
 .back {
@@ -89,15 +91,17 @@ body {
     background: #0D0D0D;
     animation: fade-out 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
     z-index: 1000;
+    cursor: none;
 }
 
 .logo {
     margin: auto;
     z-index: 1000;
     animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    cursor: none;
 }
 
-.card{
+.card {
     background-color: #0D0D0D !important;
     color: #fff !important;
     font-size: 4.5rem;

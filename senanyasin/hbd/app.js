@@ -42,7 +42,7 @@ function pad(num) {
   return num < 10 ? '0' + num : num
 }
 
-var countDownDate = new Date("February 7, 2024 00:00:00").getTime();
+var countDownDate = new Date("February 6, 2024 23:20:30").getTime();
 
 var countDown = setInterval(function () {
   var now = new Date().getTime();

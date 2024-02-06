@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="hbd"></title>
+    <link rel="icon" type="image/x-icon" href="assets/cake.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/44e05cc47c.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <iframe allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="bgSound" controls loop style="display: none">
+        <source src="assets/Eldar Mansurov  Bayatılar (İfa_ Brilliant Dadaşova)  1989.mp3" type="audio/mpeg">
+    </audio>
+    <div class="back w-100 h-100 d-flex align-items-center justify-content-center">
+        <div class="logo"><img src="assets/logo.png" alt=""></div>
+    </div>
+    <div class="timer d-flex align-items-center justify-content-center">
+        <div id="countDown" class="card col-6 d-flex align-items-center justify-content-center overflow-hidden fade-in h-25" bis_skin_checked="1">
+
+        </div>
+    </div>
+    <div class="wrapper d-flex h-100 w-100">
+        <div class="balloon-wrapper d-flex flex-column align-items-center justify-content-center col-4">
+            <span>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </span>
+        </div>
+        <div class="inside-wrapper col-4 h-100 d-flex flex-column align-items-center justify-content-evenly">
+            <div class="h-50 w-100 position-relative">
+                <div class="let-wrapper position-absolute start-50 translate-middle">
+                    <div class="let-birthdayCard">
+                        <div class="let-cardFront">
+                            <h3 class="let-happy">HOVER ME!</h3>
+                            <div class="let-balloons">
+                                <div class="let-balloonOne"></div>
+                                <div class="let-balloonTwo"></div>
+                                <div class="let-balloonThree"></div>
+                                <div class="let-balloonFour"></div>
+                            </div>
+                        </div>
+                        <div class="let-cardInside">
+                            <h3 class="let-back">HAPPY BIRTHDAY!</h3>
+                            <p>Dear Sanan,</p>
+                            <p>Let's get the cake and confetti ready, it’s time to celebrate the best person ever! I hope your
+                                birthday is as special as you are. Thank you for always being a friend I can count on.
+                            </p>
+                            <p class="let-name">Raf</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 h-50">
+                <div class="cake-container w-100 h-100 position-relative">
+                    <div class="cake-bdayCake position-absolute">
+                        <div class="cake-plate"></div>
+                        <div class="cake-cream"></div>
+                        <div class="cake-candle"></div>
+                        <div class="cake-flame">
+                            <div class="cake-one">+</div>
+                            <div class="cake-two">+</div>
+                            <div class="cake-three">+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="balloon-wrapper d-flex flex-column align-items-center justify-content-center col-4">
+            <span>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </span>
+        </div>
+    </div>
+    <script type="module" src="app.js" defer></script>
+</body>
+
+</html>

@@ -86,15 +86,15 @@ function timerFuncBase() {
     countDownSelf.classList.remove("fade-out")
     confetti.reset()
     clearInterval(timerFunc)
-    countDownSelf.innerHTML = `<span class="months"></span>
-        <span class="blink">:</span>
-        <span class="days"></span>
-        <span class="blink">:</span>
-        <span class="hours"></span>
-        <span class="blink">:</span>
-        <span class="minutes"></span>
-        <span class="blink">:</span>
-        <span class="seconds"></span>`;
+    countDownSelf.innerHTML = `<span class="months text-focus-in"></span>
+    <span class="blink d-none d-md-block">:</span>
+    <span class="days text-focus-in"></span>
+    <span class="blink d-none d-md-block">:</span>
+    <span class="hours"></span>
+    <span class="blink d-none d-md-block">:</span>
+    <span class="minutes text-focus-in"></span>
+    <span class="blink d-none d-md-block">:</span>
+    <span class="seconds text-focus-in"></span>`;
     i++
     if (i >= specialEvents.length) {
       countDownSelf.innerHTML = specialEvents[i - 1].endTitle;

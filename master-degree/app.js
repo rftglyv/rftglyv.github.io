@@ -15,7 +15,12 @@ let specialEvents = [
   {
     title: "Əsgərlik ?",
     endTitle: "Cavablar açıqlandı",
-    date: new Date("February 14, 2024 00:00:00")
+    date: new Date("February 13, 2024 00:00:00")
+  },
+  {
+    title: "Magistr ✅",
+    endTitle: "...63 bal toplamisiniz.",
+    date: new Date("February 13, 2024 14:35:00")
   }
 ]
 specialEvents.sort(function compareByDate(a, b) { return a.date - b.date; })
@@ -32,7 +37,7 @@ function pad(num) {
 
 var i = 0,
   timerFunc = setInterval(timerFuncBase, 1000)
-  title.innerHTML = specialEvents[i].title;
+title.innerHTML = specialEvents[i].title;
 function timerFuncBase() {
   var now = new Date().getTime(),
     date = new Date(specialEvents[i].date),

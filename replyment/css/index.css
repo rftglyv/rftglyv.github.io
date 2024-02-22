@@ -38,7 +38,7 @@ body {
 }
 
 section {
-    scroll-margin-top: 23.75rem;
+    scroll-margin-top: 27.5rem;
 }
 
 .fw-mid {
@@ -98,7 +98,7 @@ section {
 }
 
 .navbar-brand img {
-    width: 47px;
+    width: 45px;
 }
 
 .card {
@@ -139,7 +139,7 @@ header {
     & .navbar {
         --bs-navbar-padding-y: 0.8rem;
         background: rgb(255, 255, 255);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 0.0) 100%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 95%, rgba(255, 255, 255, 0.0) 100%);
     }
 
     & .navbar-toggler {
@@ -347,7 +347,7 @@ footer {
 @media only screen and (min-width: 992px) {
 
     section {
-        scroll-margin-top: 26rem;
+        scroll-margin-top: 28rem;
     }
 
     #home {
@@ -387,7 +387,7 @@ footer {
 @media only screen and (min-width: 1200px) {
 
     section {
-        scroll-margin-top: 30rem;
+        scroll-margin-top: 32rem;
     }
 
     #home {

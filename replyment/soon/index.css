@@ -12,12 +12,25 @@
     }
 }
 
+@property --angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
 body {
     background-color: #0D0D0D;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     color: #fff !important;
+    user-select: none;
 }
 
 .btn-primary {
@@ -47,11 +60,10 @@ body {
 
 .btn-menu {
     cursor: pointer;
-    border: 1.5px solid #55555550;
     padding: 0.65rem;
     border-radius: 0.65rem;
 
-    &:hover {
+    &:hover, &.active {
         background-color: #55555550;
         transition: background-color 0.3s ease-in-out;
     }
@@ -68,17 +80,19 @@ body {
     content: "";
     position: absolute;
     inset: calc(-1*var(--s));
-    background: conic-gradient(from 0deg at 50% 50%, #00ABFFFF 25%, #00FF0BFF 100%);
-    filter: blur(3rem);
+    background: conic-gradient(from var(--angle) at 50% 50%, #00ffff 0%, #00ABFF 25%, #aa41ff 55%, #e2ff41 75%, #00FF0B 100%);
+    filter: blur(5rem);
     transform: translate3d(0px, 0px, -1px);
     border-radius: inherit;
     pointer-events: none;
     opacity: 0.35;
     transition: background-color 1s ease-in-out;
+    animation: 5s rotate linear infinite;
 }
 
-.navbar-brand {
-    color: #fff;
+.navbar {
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: #fff;
 }
 
 .navbar-toggler {
@@ -86,6 +100,12 @@ body {
 }
 
 .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #fff;
+    outline: 0;
     box-shadow: none;
 }
 
@@ -130,6 +150,18 @@ body {
                     cursor: ns-resize;
                 }
 
+                & form{
+                    & input {
+                        background-color: transparent;
+                        border-radius: 0.75rem;
+                        padding: 0.25rem 0.75rem;
+                        &::placeholder {
+                            color: #ffffff80;
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+
                 & .service-name {
                     cursor: default;
                 }
@@ -148,7 +180,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 760px) {
 
     #soon {
         & .btn-menu {
@@ -158,6 +190,12 @@ body {
 
         & .service-name {
             font-size: 1rem !important;
+        }
+
+        & .arranger {
+            & form{
+                order: 3;
+            }
         }
     }
 }

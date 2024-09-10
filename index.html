@@ -72,11 +72,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       " id="wp-live-chat-by-3CX-phone" phonesystem-url="https://koli.3cx.az:5001" party="LiveChat939289" animation-style="none" chat-delay="2000" enable="true" enable-onmobile="true" call-title="Ödənişsiz zəng">
     </call-us-phone>
     <script>
-let processCount = 0; // To keep track of how many times processGrpBtnLabels is called
-
 const processGrpBtnLabels = () => {
-  processCount++;
-  console.log(`Processing span elements with class "grpBtnLabels" (Attempt: ${processCount})`);
+  console.log('Processing span elements with class "grpBtnLabels"');
 
   // Select all span elements with class that includes 'grpBtnLabels'
   const spans = document.querySelectorAll('span[class*="grpBtnLabels"]');
@@ -141,8 +138,6 @@ const observer = new MutationObserver((mutationsList) => {
       if (replymentWidget) {
         console.log('replyment-widget found');
         processGrpBtnLabels();
-        // Optionally disconnect the observer once the widget is found and processed
-        observer.disconnect();
       }
     }
   });

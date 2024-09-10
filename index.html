@@ -59,22 +59,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
     <call-us-phone style="
         position: fixed;
-        right: 100px;
-        bottom: 20px;
+        left: 16px;
+        bottom: 16px;
         justify-content: flex-start;
         flex-direction: column;
         display: flex;
         z-index: 99999;
-        --call-us-form-header-background: #373737;
+        --call-us-form-header-background: #f7a411;
         --call-us-main-button-background: #0596d4;
         --call-us-form-height: 40vh;
-      " id="wp-live-chat-by-3CX-phone" phonesystem-url="https://koli.3cx.az:5001" party="LiveChat939289" animation-style="none" chat-delay="2000" enable="true" enable-onmobile="true" call-title="Call Us">
+        --call-us-main-button-width: 40px;
+      " id="wp-live-chat-by-3CX-phone" phonesystem-url="https://koli.3cx.az:5001" party="LiveChat939289" animation-style="none" chat-delay="2000" enable="true" enable-onmobile="true" call-title="Pulsuz zəng">
     </call-us-phone>
     <script>
       $(document).ready(function () {
 
         $("#secondCallButton").on("click", function (e) {
-          console.log("dssdffdsf");
           e.preventDefault();
           $(
             $("call-us-phone")[0].shadowRoot.querySelector("#wplc-chat-button")

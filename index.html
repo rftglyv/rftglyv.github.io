@@ -106,17 +106,33 @@ const processGrpBtnLabels = () => {
           event.stopImmediatePropagation();
 
           // Shadow DOM action logic
-          $(document).ready(function () {
-            $("#secondCallButton").on("click", function (e) {
-              e.preventDefault();
-              const shadowButton = $("call-us-phone")[0].shadowRoot.querySelector("#wplc-chat-button");
-              if (shadowButton) {
-                console.log('Triggering click on #wplc-chat-button inside shadow DOM');
-                $(shadowButton).trigger("click");
-              } else {
-                console.log('Shadow DOM element not found');
-              }
-            });
+          document.addEventListener('DOMContentLoaded', function () {
+  // Get the button element
+  const secondCallButton = document.querySelector("#secondCallButton");
+
+  if (secondCallButton) {
+    secondCallButton.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Access the shadow DOM element
+      const callUsPhone = document.querySelector("call-us-phone");
+      if (callUsPhone && callUsPhone.shadowRoot) {
+        const shadowButton = callUsPhone.shadowRoot.querySelector("#wplc-chat-button");
+        if (shadowButton) {
+          // Trigger click on the shadow DOM button
+          shadowButton.click();
+        } else {
+          console.log('Shadow DOM element not found');
+        }
+      } else {
+        console.log('Shadow DOM not found or call-us-phone element is missing');
+      }
+    });
+  } else {
+    console.log('Second call button not found');
+  }
+});
+
           });
 
           // Custom logic here

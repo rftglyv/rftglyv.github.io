@@ -72,18 +72,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       " id="wp-live-chat-by-3CX-phone" phonesystem-url="https://koli.3cx.az:5001" party="LiveChat939289" animation-style="none" chat-delay="2000" enable="true" enable-onmobile="true" call-title="Ödənişsiz zəng">
     </call-us-phone>
     <script>
+let processCount = 0; // To keep track of how many times processGrpBtnLabels is called
+
 const processGrpBtnLabels = () => {
-  console.log('Processing span elements with class "grpBtnLabels"');
+  processCount++;
+  console.log(`Processing span elements with class "grpBtnLabels" (Attempt: ${processCount})`);
 
   // Select all span elements with class that includes 'grpBtnLabels'
   const spans = document.querySelectorAll('span[class*="grpBtnLabels"]');
+  
+  console.log(`Found ${spans.length} span elements containing "grpBtnLabels"`);
 
   // Loop through each selected span element
-  spans.forEach((spanElement) => {
-    console.log('Checking span element:', spanElement);
+  spans.forEach((spanElement, index) => {
+    console.log(`Processing span element #${index + 1}:`, spanElement);
 
     // Find the h5 child element inside the current span element
     const h5Element = spanElement.querySelector('h5');
+    console.log(`Found h5 element for span #${index + 1}:`, h5Element);
 
     // Check if the h5 element exists and its text is 'test'
     if (h5Element && h5Element.textContent.trim() === 'test') {
@@ -95,12 +101,12 @@ const processGrpBtnLabels = () => {
       // Add a custom onClick function to the parent element
       parentElement.addEventListener('click', (event) => {
         console.log('Parent element clicked');
-        
+
         // Prevent the default onClick behavior (if any)
         event.preventDefault();
         event.stopImmediatePropagation();
 
-        // Trigger the Shadow DOM action when the parent element is clicked
+        // Shadow DOM action logic
         $(document).ready(function () {
           $("#secondCallButton").on("click", function (e) {
             e.preventDefault();
@@ -118,7 +124,7 @@ const processGrpBtnLabels = () => {
         console.log('Custom click handler executed for:', parentElement);
       });
     } else {
-      console.log('h5 element not found or text is not "test"');
+      console.log(`h5 element not found or text is not "test" for span #${index + 1}`);
     }
   });
 };

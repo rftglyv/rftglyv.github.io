@@ -94,10 +94,11 @@ const processGrpBtnLabels = () => {
 
       // Get the parent element of the span
       const parentElement = spanElement.parentElement;
+      console.log('Parent element:', parentElement);
 
       // Add a custom onClick function to the parent element
       parentElement.addEventListener('click', (event) => {
-        console.log('Parent element clicked');
+        console.log('Parent element clicked:', parentElement);
 
         // Prevent the default onClick behavior (if any)
         event.preventDefault();

@@ -96,31 +96,35 @@ const processGrpBtnLabels = () => {
       const parentElement = spanElement.parentElement;
       console.log('Parent element:', parentElement);
 
-      // Add a custom onClick function to the parent element
-      parentElement.addEventListener('click', (event) => {
-        console.log('Parent element clicked:', parentElement);
+      if (parentElement) {
+        // Add a custom onClick function to the parent element
+        parentElement.addEventListener('click', (event) => {
+          console.log('Parent element clicked:', parentElement);
 
-        // Prevent the default onClick behavior (if any)
-        event.preventDefault();
-        event.stopImmediatePropagation();
+          // Prevent the default onClick behavior (if any)
+          event.preventDefault();
+          event.stopImmediatePropagation();
 
-        // Shadow DOM action logic
-        $(document).ready(function () {
-          $("#secondCallButton").on("click", function (e) {
-            e.preventDefault();
-            const shadowButton = $("call-us-phone")[0].shadowRoot.querySelector("#wplc-chat-button");
-            if (shadowButton) {
-              console.log('Triggering click on #wplc-chat-button inside shadow DOM');
-              $(shadowButton).trigger("click");
-            } else {
-              console.log('Shadow DOM element not found');
-            }
+          // Shadow DOM action logic
+          $(document).ready(function () {
+            $("#secondCallButton").on("click", function (e) {
+              e.preventDefault();
+              const shadowButton = $("call-us-phone")[0].shadowRoot.querySelector("#wplc-chat-button");
+              if (shadowButton) {
+                console.log('Triggering click on #wplc-chat-button inside shadow DOM');
+                $(shadowButton).trigger("click");
+              } else {
+                console.log('Shadow DOM element not found');
+              }
+            });
           });
-        });
 
-        // Custom logic here
-        console.log('Custom click handler executed for:', parentElement);
-      });
+          // Custom logic here
+          console.log('Custom click handler executed for:', parentElement);
+        });
+      } else {
+        console.log('Parent element is null or undefined');
+      }
     } else {
       console.log(`h5 element not found or text is not "test" for span #${index + 1}`);
     }

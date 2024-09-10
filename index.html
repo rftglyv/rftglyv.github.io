@@ -72,24 +72,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       " id="wp-live-chat-by-3CX-phone" phonesystem-url="https://koli.3cx.az:5001" party="LiveChat939289" animation-style="none" chat-delay="2000" enable="true" enable-onmobile="true" call-title="Ödənişsiz zəng">
     </call-us-phone>
     <script>
-// Select all span elements with class that includes 'grpBtnLabels'
-const spans = document.querySelectorAll('span[class*="grpBtnLabels"]');
 
-// Loop through each selected span element
-spans.forEach((spanElement) => {
-  // Find the h5 child element inside the current span element
-  const h5Element = spanElement.querySelector('h5');
+        // Function to execute when 'replyment-widget' is found
+const processGrpBtnLabels = () => {
+  // Select all span elements with class that includes 'grpBtnLabels'
+  const spans = document.querySelectorAll('span[class*="grpBtnLabels"]');
 
-  // Check if the h5 element exists and its text is 'test'
-  if (h5Element && h5Element.textContent.trim() === 'test') {
-    // Get the parent element of the span
-    const parentElement = spanElement.parentElement;
+  // Loop through each selected span element
+  spans.forEach((spanElement) => {
+    // Find the h5 child element inside the current span element
+    const h5Element = spanElement.querySelector('h5');
 
-    // Add a custom onClick function to the parent element
-    parentElement.addEventListener('click', (event) => {
-      // Prevent the default onClick behavior (if any)
-      event.preventDefault();
-      event.stopImmediatePropagation();
+    // Check if the h5 element exists and its text is 'test'
+    if (h5Element && h5Element.textContent.trim() === 'test') {
+      // Get the parent element of the span
+      const parentElement = spanElement.parentElement;
+
+      // Add a custom onClick function to the parent element
+      parentElement.addEventListener('click', (event) => {
+        // Prevent the default onClick behavior (if any)
+        event.preventDefault();
+        event.stopImmediatePropagation();
 $(document).ready(function () {
 
         $("#secondCallButton").on("click", function (e) {
@@ -99,12 +102,42 @@ $(document).ready(function () {
           ).trigger("click");
         });
       });
-      // Add your custom logic here
-      console.log('Custom click handler executed for:', parentElement);
-    });
+        // Custom logic here
+        console.log('Custom click handler executed for:', parentElement);
+      });
+    }
+  });
+};
+
+// Create a MutationObserver to monitor the DOM for changes
+const observer = new MutationObserver((mutationsList) => {
+  for (let mutation of mutationsList) {
+    // Check if any nodes were added
+    if (mutation.addedNodes.length) {
+      // Check if the custom element 'replyment-widget' exists
+      const replymentWidget = document.querySelector('replyment-widget');
+      if (replymentWidget) {
+        // When the custom element is found, process it and disconnect the observer
+        console.log('replyment-widget found');
+        processGrpBtnLabels();
+        // Optionally disconnect the observer once the widget is found and processed
+        observer.disconnect();
+      }
+    }
   }
 });
 
+// Start observing the document's body for changes in child elements
+observer.observe(document.body, {
+  childList: true, // Monitor direct child additions/removals
+  subtree: true,   // Monitor entire subtree (e.g., deeper nested elements)
+});
+
+// In case the element is already present (e.g., if loaded before the script)
+const initialCheck = document.querySelector('replyment-widget');
+if (initialCheck) {
+  processGrpBtnLabels();
+}
  </script>
 <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
 </body>

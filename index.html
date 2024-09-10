@@ -57,7 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <script defer src="https://widget.replyment.com/widget.js?id=413ecc5b-d6ca-4a20-89d9-1321fcf9206a"></script>
     <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
-<!--     <call-us-phone style="
+    <call-us-phone style="
         position: fixed;
         left: 16px;
         bottom: 16px;
@@ -70,78 +70,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         --call-us-form-height: 40vh;
         --call-us-main-button-width: 44.1px;
       " id="wp-live-chat-by-3CX-phone" phonesystem-url="https://koli.3cx.az:5001" party="LiveChat939289" animation-style="none" chat-delay="2000" enable="true" enable-onmobile="true" call-title="Ödənişsiz zəng">
-    </call-us-phone> -->
+    </call-us-phone>
     <script>
-// Function to find the target element and insert the <call-us-phone> element
-          const insertCallUsPhone = () => {
-            // Find the element whose class names contain 'buttonGroup'
-            const buttonGroupElement = document.querySelector(
-              'div[class*="buttonGroup"]'
-            );
+      $(document).ready(function () {
 
-            if (buttonGroupElement) {
-              // Create the <call-us-phone> element
-              const callUsPhone = document.createElement("call-us-phone");
-              callUsPhone.style.position = "fixed";
-              callUsPhone.style.left = "16px";
-              callUsPhone.style.bottom = "16px";
-              callUsPhone.style.justifyContent = "flex-start";
-              callUsPhone.style.flexDirection = "column";
-              callUsPhone.style.display = "flex";
-              callUsPhone.style.zIndex = "99999";
-              callUsPhone.style.setProperty(
-                "--call-us-form-header-background",
-                "#f7a411"
-              );
-              callUsPhone.style.setProperty(
-                "--call-us-main-button-background",
-                "#0596d4"
-              );
-              callUsPhone.style.setProperty("--call-us-form-height", "40vh");
-              callUsPhone.style.setProperty(
-                "--call-us-main-button-width",
-                "44.1px"
-              );
-              callUsPhone.id = "wp-live-chat-by-3CX-phone";
-              callUsPhone.setAttribute(
-                "phonesystem-url",
-                "https://koli.3cx.az:5001"
-              );
-              callUsPhone.setAttribute("party", "LiveChat939289");
-              callUsPhone.setAttribute("animation-style", "none");
-              callUsPhone.setAttribute("chat-delay", "2000");
-              callUsPhone.setAttribute("enable", "true");
-              callUsPhone.setAttribute("enable-onmobile", "true");
-              callUsPhone.setAttribute("call-title", "Ödənişsiz zəng");
+        $("#secondCallButton").on("click", function (e) {
+          e.preventDefault();
+          $(
+            $("call-us-phone")[0].shadowRoot.querySelector("#wplc-chat-button")
+          ).trigger("click");
+        });
+      });
 
-              // Append the <call-us-phone> element to the target element
-              buttonGroupElement.appendChild(callUsPhone);
-            }
-          };
-
-          // Call the function to perform the insertion
-
-          const observer = new MutationObserver((mutationsList) => {
-            mutationsList.forEach((mutation) => {
-              if (mutation.addedNodes.length) {
-                const replymentWidget =
-                  document.querySelector("replyment-widget");
-                if (replymentWidget) {
-                  insertCallUsPhone();
-                }
-              }
-            });
-          });
-
-          observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-          });
-
-          const initialCheck = document.querySelector("replyment-widget");
-          if (initialCheck) {
-            insertCallUsPhone();
-          }
  </script>
 <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
 </body>

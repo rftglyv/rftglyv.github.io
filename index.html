@@ -73,107 +73,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </call-us-phone>
     <script>
 const processGrpBtnLabels = () => {
-  console.log('Processing span elements with class "grpBtnLabels"');
-
-  // Select all span elements with class that includes 'grpBtnLabels'
   const spans = document.querySelectorAll('span[class*="grpBtnLabels"]');
-  
-  console.log(`Found ${spans.length} span elements containing "grpBtnLabels"`);
 
-  // Loop through each selected span element
-  spans.forEach((spanElement, index) => {
-    console.log(`Processing span element #${index + 1}:`, spanElement);
-
-    // Find the h5 child element inside the current span element
+  spans.forEach((spanElement) => {
     const h5Element = spanElement.querySelector('h5');
-    console.log(`Found h5 element for span #${index + 1}:`, h5Element);
 
-    // Check if the h5 element exists and its text is 'test'
-    if (h5Element && h5Element.textContent.trim() === 'test') {
-      console.log('Found h5 with text "test"');
+    if (h5Element) {
+      const h5Text = h5Element.textContent.trim();
 
-      // Get the parent element of the span
-      const parentElement = spanElement.parentElement;
-      console.log('Parent element:', parentElement);
+      if (h5Text.toLowerCase() === 'test') {
+        const parentElement = spanElement.parentElement;
 
-      if (parentElement) {
-        // Add a custom onClick function to the parent element
-        parentElement.addEventListener('click', (event) => {
-          console.log('Parent element clicked:', parentElement);
+        if (parentElement) {
+          parentElement.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopImmediatePropagation();
 
-          // Prevent the default onClick behavior (if any)
-          event.preventDefault();
-          event.stopImmediatePropagation();
+            // Custom logic here
+            document.addEventListener('DOMContentLoaded', function () {
+              const secondCallButton = document.querySelector("#secondCallButton");
 
-          // Shadow DOM action logic
-          document.addEventListener('DOMContentLoaded', function () {
-  // Get the button element
-  const secondCallButton = document.querySelector("#secondCallButton");
+              if (secondCallButton) {
+                secondCallButton.addEventListener("click", function (e) {
+                  e.preventDefault();
 
-  if (secondCallButton) {
-    secondCallButton.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      // Access the shadow DOM element
-      const callUsPhone = document.querySelector("call-us-phone");
-      if (callUsPhone && callUsPhone.shadowRoot) {
-        const shadowButton = callUsPhone.shadowRoot.querySelector("#wplc-chat-button");
-        if (shadowButton) {
-          // Trigger click on the shadow DOM button
-          shadowButton.click();
-        } else {
-          console.log('Shadow DOM element not found');
-        }
-      } else {
-        console.log('Shadow DOM not found or call-us-phone element is missing');
-      }
-    });
-  } else {
-    console.log('Second call button not found');
-  }
-});
-
+                  const callUsPhone = document.querySelector("call-us-phone");
+                  if (callUsPhone && callUsPhone.shadowRoot) {
+                    const shadowButton = callUsPhone.shadowRoot.querySelector("#wplc-chat-button");
+                    if (shadowButton) {
+                      shadowButton.click();
+                    }
+                  }
+                });
+              }
+            });
           });
-
-          // Custom logic here
-          console.log('Custom click handler executed for:', parentElement);
-        });
-      } else {
-        console.log('Parent element is null or undefined');
+        }
       }
-    } else {
-      console.log(`h5 element not found or text is not "test" for span #${index + 1}`);
     }
   });
 };
 
-// Create a MutationObserver to monitor the DOM for changes
 const observer = new MutationObserver((mutationsList) => {
   mutationsList.forEach((mutation) => {
-    // Check if any nodes were added
     if (mutation.addedNodes.length) {
-      console.log('Mutation detected:', mutation);
-
-      // Check if the custom element 'replyment-widget' exists
       const replymentWidget = document.querySelector('replyment-widget');
       if (replymentWidget) {
-        console.log('replyment-widget found');
         processGrpBtnLabels();
       }
     }
   });
 });
 
-// Start observing the document's body for changes in child elements
 observer.observe(document.body, {
-  childList: true, // Monitor direct child additions/removals
-  subtree: true,   // Monitor entire subtree (e.g., deeper nested elements)
+  childList: true,
+  subtree: true,
 });
 
-// In case the element is already present (e.g., if loaded before the script)
 const initialCheck = document.querySelector('replyment-widget');
 if (initialCheck) {
-  console.log('replyment-widget found on initial check');
   processGrpBtnLabels();
 }
 

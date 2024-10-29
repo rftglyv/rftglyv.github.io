@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>User-Agent Client Hints Test</title>
+    </head>
+    <body>
+      <h1>User-Agent Client Hints Test</h1>
+      <pre id="device-info"></pre>
+      <script>
+        const fetchDeviceInfo = () => {
+          if (navigator.userAgentData) {
+            navigator.userAgentData.getHighEntropyValues([
+              "architecture",
+              "model",
+              "platform",
+              "platformVersion",
+              "fullVersionList",
+            ])
+            .then((ua) => {
+              document.getElementById("device-info").textContent = JSON.stringify(ua, null, 2);
+              console.log("Detailed Device Info:", ua);
+            })
+            .catch((error) => {
+              console.error("Error fetching high entropy values:", error);
+              const userAgent = navigator.userAgent;
+              console.log("User-Agent:", userAgent);
+              document.getElementById("device-info").textContent = userAgent;
+            });
+          } else {
+            document.getElementById("device-info").textContent = "User-Agent Client Hints API not supported";
+            const userAgent = navigator.userAgent;
+            console.log("User-Agent:", userAgent);
+          }
+        };
+
+        fetchDeviceInfo();
+      </script>
+    </body>
+    </html>
